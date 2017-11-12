@@ -1,0 +1,110 @@
+﻿@model Drug_Information_System.Models.PharmaCompany
+
+@{
+    ViewBag.Title = "Index";
+    dynamic topPharma = ViewBag.TopPharmaName;
+    dynamic pharmaNames = ViewBag.PharmaNames;
+}
+
+<h2>All Company Names</h2>
+<hr>
+
+
+<div class="topPharma">
+    <table class="table">
+        <thead>
+            <tr class="danger">
+                <th>
+                    <h4><b>Popular Company Names</b></h4>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in topPharma)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink((string)@item.PharmaName.ToString(), "DrugInfo", new { pharmaId = item.PharmaId })
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
+<div class="allPharma">
+    <table id="myTable" class="table">
+        <thead>
+            <tr class="info">
+                <th>
+                    @Html.DisplayNameFor(model => model.PharmaName)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr class="danger">
+                <th>
+                    @Html.DisplayNameFor(model => model.PharmaName)
+                </th>
+
+                <th></th>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            @foreach (var item in pharmaNames)
+            {
+                <tr>
+
+                    <td>
+                        @Html.ActionLink((string)@item.PharmaName.ToString(), "DrugInfo", new { pharmaId = item.Id })
+                    </td>
+
+                    <td></td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .topPharma {
+        height: auto;
+        text-align: center;
+        float: right;
+        width: 30% !important;
+    }
+
+    .allPharma {
+        float: left;
+        border-right: 1px solid grey;
+        width: 65% !important;
+    }
+</style>
+
+
+
+@section Scripts {
+   
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document)
+            .ready(function () {
+               $('#myTable').DataTable({ responsive: true });
+
+            });
+
+    </script>
+
+}

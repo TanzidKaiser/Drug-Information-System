@@ -1,0 +1,84 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<h2>All Drug Informations</h2>
+<hr>
+
+
+<table id="myTable" class="table">
+    <thead>
+        <tr class="info">
+            <th>Brand Name </th>
+            @*<th>Pharma Name </th>*@
+            <th>Drug Form</th>
+            <th>Pack Size</th>
+            <th>Price (TK)</th>
+            <th></th>
+        </tr>
+    </thead>
+
+</table>
+
+
+
+
+@section Scripts {
+
+
+    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document)
+            .ready(function() {
+                $("#myTable")
+                    .DataTable({
+                        "processing": true,
+                        "serverSide": true,
+                        "filter": true,
+                        "orderMulti": false,
+                        "ajax": {
+                            "url": "/BrandInfo/LoadData",
+                            "type": "POST",
+                            "datatype": "json"
+                        },
+
+                        "columns": [
+                            { "data": "BrandName", "name": "BrandName" },
+                            //{ "data": "PharmaCompany", "name": "PharmaCompany" },
+                            { "data": "DrugForm", "name": "DrugForm" },
+                            { "data": "PackSize", "name": "PackSize" },
+                            { "data": "Price", "name": "Price" },
+                            {
+                                "mDataProp": function (source, type, val) {
+                                    return '<a class="btn btn-info" href=/BrandInfo/Details/' + source.Id + '?genericId=' + source.GenericId + '>Details</a>';
+
+                                }, "bSortable": false
+                            }
+                        ]
+                    });
+            });
+    </script>
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+﻿@model Drug_Information_System.Models.PharmaCompany
+
+@{
+    ViewBag.Title = "CompanyDetails";
+}
+
+<h2>Company Details</h2>
+
+<div>
+
+    <dl class="dl-horizontal">
+
+
+
+        <hr>
+        <h4>
+            <dt>
+                @Html.DisplayNameFor(model => model.PharmaName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PharmaName)
+            </dd>
+        </h4>
+        <hr>
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<style>
+    dt {
+        font-weight: bold;
+        text-decoration: underline;
+        font-weight: bold;
+        color: green;
+    }
+
+    dd {
+        margin: 0;
+        padding: 0 0 0.5em 0;
+    }
+</style>
+
+@*<script src="~/Scripts/bootstrap.min.js"></script>*@
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>

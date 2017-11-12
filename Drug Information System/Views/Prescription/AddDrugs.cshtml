@@ -1,0 +1,498 @@
+﻿@model Drug_Information_System.Models.DoctorPrescription
+@{
+    ViewBag.Title = "AddDrugs";
+    dynamic prescrivedDrugs = ViewBag.PrescrivedDrugs;
+    
+    dynamic precriptionId = ViewBag.PrescriptionId;
+    dynamic patientName =  ViewBag.PatientName;
+    dynamic patientAge =  ViewBag.PatientAge;
+    dynamic gender =  ViewBag.Gender;
+    dynamic visitedDate = ViewBag.VisitedDate;
+    dynamic patientId = ViewBag.PatientId;
+    dynamic suggestion = ViewBag.Suggestion;
+    
+    dynamic doctorName = ViewBag.DoctorName;
+    dynamic address = ViewBag.Address;
+    dynamic email = ViewBag.Email;
+}
+
+<h2>Generate Prescription</h2>
+<hr>
+
+<div id="prescriptionContent">
+
+
+    <div class="patientInfo">
+        <label id="prescriptionId" hidden>@precriptionId</label>
+        <table>
+            <tr>
+                <td class="title">Patient Name : </td>
+                <td class="text">@patientName</td>
+            </tr>
+            <tr>
+                <td class="title">Patient Age : </td>
+                <td class="text">@patientAge</td>
+            </tr>
+            <tr>
+                <td class="title">Gender : </td>
+                <td class="text">@gender</td>
+            </tr>
+            <tr>
+                <td class="title">Date : </td>
+                <td class="text">@visitedDate</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="doctorInfo">
+        <table>
+            <tr>
+                <td class="title">Doctor Name : </td>
+                <td class="text">@doctorName</td>
+            </tr>
+            <tr>
+                <td class="title">Address : </td>
+                <td class="text">@address</td>
+            </tr>
+            <tr>
+                <td class="title">Email : </td>
+                <td class="text">@email</td>
+            </tr>
+            <tr>
+                <td class="title">PID : </td>
+                <td class="text">@patientId</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div style="clear: both; text-align: center">
+        <hr>
+        <span id="tableErrorSpan" style="color: red"></span>
+        <table id="myTable" class="drugsarea table" style="width: 100%">
+            <tr class="info">
+                <th>Drugs</th>
+                <th>Dosage Form</th>
+                <th>Dosage Duration</th>
+                <th>Extra Note</th>
+                <th></th>
+            </tr>
+
+            @if (prescrivedDrugs != null)
+            {
+                foreach (var item in prescrivedDrugs)
+                {
+                    <tr class ="danger">
+                        <td>@item.DrugName</td>
+                        <td>@item.DosageForm</td>
+                        <td>@item.DosageDuration</td>
+                        <td>@item.ExtraNote</td>
+                        <td><button type="button" id="deleteDrugs" class="btn btn-danger" onclick="DeleteDrug(@item.Id,this)">Delete</button></td>
+                    </tr>
+                }
+            }
+
+
+        </table>
+    </div>
+
+    <div style="clear: both; text-align: center">
+        <div style="background-color: lightskyblue">
+            <label style="font-size: 18px; width: auto">
+                <strong style="">Doctor Suggestions</strong>
+            </label>
+        </div>
+        <div style="background-color: aliceblue">
+            <span id="suggestionBody" style="font-size: 18px">@suggestion</span>
+           
+        </div>
+            
+            
+    </div>
+
+
+
+</div>
+
+
+
+
+<div style="clear: both; text-align: center">
+    <hr>
+
+    <label style="padding: 3px; margin-right: 10px;">
+        Drug Name <br>
+        <input type="text" class="form-control" id="drugName" style="margin-right: 10px" placeholder="Enter Drugs Name">
+        
+        <span id="drugNameSpan" style="color: red"></span>
+    </label>
+
+    <label style="border: 1px solid grey; padding: 3px; margin-right: 10px;">
+        <input id="morning" type="checkbox" name="options" value="morning" checked="checked" /> Morning
+        <input id="evening" type="checkbox" name="options" value="evening" /> Evening
+        <input id="night" type="checkbox" name="options" value="night" /> Night
+        <br>
+        <span id="checkBoxSpan" style="color: red"></span>
+    </label>
+
+    <label style="border: 1px solid grey; padding: 3px; margin-right: 10px">
+        <input id="before" type="radio" name="group1" value="before" checked="checked"/> Before Eating
+        <input id="after" type="radio" name="group1" value="after"/> After Eating
+
+    </label>
+
+    <label style="padding: 3px; margin-right: 10px;">
+        Dosage Duration <br>
+        <input type="text" class="form-control" id="duration" style="width: 180px; margin-right: 10px" placeholder="Enter Dosage Duration">
+        
+        <span id="durationSpan" style="color: red"></span>
+    </label>
+
+    <label style="padding: 3px; margin-right: 10px;">
+        Extra Note for This Particular Drug<br>
+        <textarea rows="2" id="extranote" class="form-control" cols="30" style="margin-right: 10px"></textarea>
+
+        
+    </label>
+
+    <br>
+    <button type="button" id="add" class="btn btn-primary" onclick="CheckValidation()">Add Drugs</button>
+</div>
+
+<hr>
+
+<div id="editor" style="text-align: center">
+    <label style="padding: 3px; margin-right: 10px;">
+        Any Suggestions <br>
+        <textarea rows="3" id="suggestions" class="form-control" cols="100"></textarea>
+
+        <span id="suggestionSpan" style="color: red"></span>
+    </label>
+    <br>
+    <button type="button" id="addSuggestions" class="btn btn-primary" onclick="AddSugges()">Add Suggestions</button>
+
+    <button type="button" id="saveinfo" class="btn btn-success" onclick="FinalSubmit()">Generate Report</button>
+
+
+</div>
+
+
+
+
+<style >
+    table tr .title {
+        text-align: right;
+        background: #5f9be3;
+        color: #fff;
+        font-weight: bold;
+        padding: 5px;
+        width: auto;
+    }
+
+    table tr .text {
+        padding-left: 10px;
+    }
+
+    .patientInfo {
+        height: auto;
+        
+         text-align: center;
+        float: right;
+        border-left: 1px solid grey;
+        width: 30% !important;
+    }
+
+    .doctorInfo {
+        float: left;
+        
+        width: 69% !important;
+    }
+
+</style>
+
+<script src="~/Scripts/jquery.js"></script>
+<script type="text/javascript">
+    
+    $(function () {
+
+        $("#drugName")
+            .autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/Prescription/AllBrandNames',
+                        data: "{ 'prefix': '" + request.term + "'}",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            response(data);
+                        },
+                        error: function (responce) {
+                            alert(response.responseText);
+                        },
+                    });
+                },
+                select: function (event, ui) {
+                    event.preventDefault();
+                    $(this).val(ui.item.brandName + ' - ' + ui.item.drugStrength + '  ' + ui.item.drugForm);
+                },
+                minLength: 1
+            }).autocomplete('instance')._renderItem = function (ul, item) {
+                return $('<li>')
+
+                    .append('<b>' + item.brandName + '</b>' + ' - ' + item.drugStrength + '  ' + item.drugForm)
+                    .appendTo(ul);
+            }
+    });
+
+
+    function CheckValidation() {
+        var drugName = document.getElementById('drugName');
+        var duration = document.getElementById('duration');
+        var extraNote = document.getElementById('extranote');
+        var prescriptionId = document.getElementById('prescriptionId');
+        var rowCount = $('#myTable tr').length;
+        
+        var flag = 1;
+
+        if (drugName.value.length == 0) {
+            document.getElementById('drugNameSpan').innerHTML = 'Drug name can not be blank';
+            flag = 0;
+        } else {
+            document.getElementById('drugNameSpan').innerHTML = '';
+            flag = 1;
+        }
+
+        if (duration.value.length == 0) {
+            document.getElementById('durationSpan').innerHTML = 'Duration name can not be blank';
+            flag = 0;
+        } else {
+            document.getElementById('durationSpan').innerHTML = '';
+            flag = 1;
+        }
+
+        if (validateChecks() == false) {
+            document.getElementById('checkBoxSpan').innerHTML = 'Please check at least one of the options.';
+            flag = 0;
+        } else {
+            document.getElementById('checkBoxSpan').innerHTML = '';
+            flag = 1;
+        }
+
+        if (drugName.value.length != 0 && duration.value.length != 0 && validateChecks() != false) {
+            //alert(rowCount);
+
+            $.ajax({
+
+                //url: '<%: Url.Action("SaveDrugs") %>',
+                url: '/Prescription/SaveDrugs',
+                data: { 'drugName': drugName.value, 'dosageForm': GetCheckBoxValue() + ' - ' + GetRadiobuttonValue(), 'dosageDudation': duration.value, 'extraNote': extraNote.value, 'doctorPrescriptionId': prescriptionId.innerHTML },
+                type: "post",
+                cache: false,
+                success: function (content) {
+                    if (content == 'Drug is already added in the list') {
+                        document.getElementById('tableErrorSpan').innerHTML = content;
+                    }
+                    else if (content != null) {
+                        $('.drugsarea').append(
+
+                            '<tr class="danger">' +
+                            '<td>' + drugName.value + '</td>' +
+                            '<td>' + GetCheckBoxValue() + ' - ' + GetRadiobuttonValue() + '</td>' +
+                            '<td>' + duration.value + '</td>' +
+                            '<td>' + extraNote.value + '</td>' +
+                            '<td>' +
+                            ' <button type="button" id="deleteDrugs" class="btn btn-danger" onclick="DeleteDrug(' + content + ',this)">Delete</button>  ' +
+                            '</td>' +
+                            '</tr>'
+
+                        );
+                        document.getElementById('tableErrorSpan').innerHTML = '';
+                        $("#drugName").val('');
+                        $("#duration").val('');
+                        $("#extranote").val('');
+                    }
+
+                    
+                    
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    document.getElementById('tableErrorSpan').innerHTML = 'Error !! Please try again';
+                }
+
+            
+            });
+ 
+        }
+        
+    }
+
+    function DeleteDrug(id, num) {
+
+        $.ajax({
+
+            
+            url: '/Prescription/DeleteDrugs',
+            data: { 'drugId': id },
+            type: "post",
+            cache: false,
+            success: function (content) {
+                if (content == 'Delete SuccessFull') {
+                    
+                    var rowNumber = num.parentNode.parentNode.rowIndex;
+                    document.getElementById("myTable").deleteRow(rowNumber);
+
+
+                    document.getElementById('tableErrorSpan').innerHTML = '';
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                document.getElementById('tableErrorSpan').innerHTML = 'Error !! Please try again';
+            }
+
+        });
+
+    }
+
+
+    function FinalSubmit() {
+        var suggestions = document.getElementById('suggestionBody');
+        var prescriptionId = document.getElementById('prescriptionId');
+
+        var tableRowCount = $('#myTable tr').length;
+        
+        
+
+        if (suggestions.innerHTML.length == 0 && tableRowCount < 2) {
+            document.getElementById('suggestionSpan').innerHTML = 'Please Add some Drugs or Add Suggestion.';
+            
+        } else {
+            document.getElementById('suggestionSpan').innerHTML = '';
+            window.location = '/Prescription/PDF?prescriptionId=' + prescriptionId.innerHTML;
+        }
+
+        
+
+       
+
+    }
+
+
+    function AddSugges() {
+        var suggestions = document.getElementById('suggestions');
+        var prescriptionId = document.getElementById('prescriptionId');
+        
+
+        $.ajax({
+
+            url: '/Prescription/AddSuggestion',
+            data: { 'prescriptionId': prescriptionId.innerHTML, 'content': suggestions.value },
+            type: "post",
+            cache: false,
+            success: function (content) {
+                if (content == 'Update SuccessFull') {
+
+                    document.getElementById('suggestionBody').innerHTML = suggestions.value;
+                    document.getElementById('tableErrorSpan').innerHTML = '';
+                    $("#suggestions").val('');
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                document.getElementById('tableErrorSpan').innerHTML = 'Error !! Please try again';
+            }
+
+        });
+
+
+    }
+
+
+    function validateChecks() {
+        var chks = document.getElementsByName('options');
+        var checkCount = 0;
+        for (var i = 0; i < chks.length; i++) {
+            if (chks[i].checked) {
+                checkCount++;
+            }
+        }
+        if (checkCount < 1) {
+            return false;
+        }
+        return true;
+    }
+
+    function GetCheckBoxValue() {
+        var chks = document.getElementsByName('options');
+        var checkCount = 0;
+        for (var i = 0; i < chks.length; i++) {
+            if (chks[i].checked) {
+                checkCount++;
+            }
+        }
+        var dosageform = "";
+        if (checkCount == 1) {
+            dosageform = "1 Times a day";
+        }
+        else if (checkCount == 2) {
+            dosageform = "2 Times a day";
+        }
+        else if (checkCount == 3) {
+            dosageform = "3 Times a day";
+        }
+        return dosageform;
+    }
+
+    function GetRadiobuttonValue() {
+        var radiogroup = document.getElementsByName('group1');
+        var radioValue = "";
+        if (radiogroup[0].checked) {
+            radioValue = "Before Eating";
+        }
+        else if (radiogroup[1].checked) {
+            radioValue = "After Eating";
+        }
+        return radioValue;
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

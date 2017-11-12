@@ -1,0 +1,289 @@
+﻿@using System.Globalization
+@using System.Web.Mvc.Html
+@using Drug_Information_System.Models
+@model Drug_Information_System.Models.DrugBrandInfo
+
+
+@{
+    ViewBag.Title = "Details";
+
+    
+
+    dynamic TherapiticNames = ViewBag.TherapiticNames;
+    dynamic IndicationNames = ViewBag.IndicationNames;
+    dynamic PharmaName = ViewBag.PharmaName;
+
+    dynamic GenericInfo = ViewBag.GenericInfo;
+    dynamic PregnancyInfo = ViewBag.PregnancyInfo;
+
+   
+
+
+
+}
+
+
+
+
+
+<div class="details-drug">
+
+    
+
+
+
+    <div style=" ">
+        <dl class="dl-horizontal">
+
+            <h3>
+                <dt>
+                    @Html.Label("Brand Name")
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.BrandName)
+                </dd>
+
+            </h3>
+
+            <dt>
+                @Html.Label("Drug Strength")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DrugStrength)
+            </dd>
+
+            <dt>
+                @Html.Label("Drug Form")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DrugForm)
+            </dd>
+
+            <dt>
+                @Html.Label("Generic Name")
+            </dt>
+            <dd>
+                @GenericInfo.GenericName
+            </dd>
+
+            <dt>
+                @Html.Label("Pharma Name")
+            </dt>
+            <dd>
+                @PharmaName
+            </dd>
+
+            <dt>
+                @Html.Label("Therapeutic Class")
+            </dt>
+            <dd>
+                @TherapiticNames
+            </dd>
+
+            <dt>
+                @Html.Label("Pack Size")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PackSize)
+            </dd>
+
+            <dt>
+                @Html.Label("Price")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price) TK
+            </dd>
+
+        </dl>
+
+    </div>
+
+
+
+    <div>
+
+        <div class="fancy-collapse-panel">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <div class="panel panel-default">
+                    
+                    <div class="panel-heading" >
+                        <h4 class="panel-title">
+                            Indications
+                        </h4>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="panel-body">
+                            @IndicationNames
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#" style="text-align: center; font-size: 20px;">
+                                Contraindication
+                            </a>
+                        </h4>
+                    </div>
+                    <div  role="tabpanel" >
+                        <div class="panel-body">
+                            @Html.DisplayFor(model => model.DrugGeneric.Contraindication)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#" style="text-align: center; font-size: 20px;">
+                                Side Effects
+                            </a>
+                        </h4>
+                    </div>
+                    <div role="tabpanel" >
+                        <div class="panel-body">
+                            @GenericInfo.SideEffect
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#" style="text-align: center; font-size: 20px;">
+                                Dosage Form
+                            </a>
+                        </h4>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="panel-body">
+                            @GenericInfo.DosageForm
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#" style="text-align: center; font-size: 20px;">
+                                Warning And Precaution
+                            </a>
+                        </h4>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="panel-body">
+                            @GenericInfo.WarningAndPrecaution
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSix">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#" style="text-align: center; font-size: 20px;">
+                                Interaction
+                            </a>
+                        </h4>
+                    </div>
+                    <div role="tabpanel" >
+                        <div class="panel-body">
+                            @GenericInfo.Interaction
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSeven">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#" style="text-align: center; font-size: 20px;">
+                                Mode Of Action
+                            </a>
+                        </h4>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="panel-body">
+                            @GenericInfo.ModeOfAction
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingEight">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#" style="text-align: center; font-size: 20px;">
+                                Pregnancy Category
+                            </a>
+                        </h4>
+                    </div>
+                    <div role="tabpanel">
+                        <div class="panel-body">
+                            Pregnancy Category - @PregnancyInfo.PregnancyName <br> @PregnancyInfo.PregnancyDiscription
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<style>
+    dt {
+        font-weight: bold;
+        text-decoration: underline;
+        font-weight: bold;
+        color: green;
+    }
+
+    dd {
+        margin: 0;
+        padding: 0 0 0.5em 0;
+    }
+
+    
+
+
+
+
+
+    .fancy-collapse-panel .panel-default > .panel-heading {
+        padding: 0;
+    }
+
+    .fancy-collapse-panel .panel-heading a {
+        padding: 12px 35px 12px 15px;
+        display: inline-block;
+        width: 100%;
+        background-color: #1e90ff;
+        color: #ffffff;
+        position: relative;
+        text-decoration: none;
+    }
+
+        .fancy-collapse-panel .panel-heading a:after {
+            font-family: "FontAwesome";
+            content: "\f147";
+            position: absolute;
+            right: 20px;
+            font-size: 25px;
+            font-weight: 400;
+            top: 50%;
+            line-height: 1;
+            margin-top: -10px;
+        }
+
+        .fancy-collapse-panel .panel-heading a.collapsed:after {
+            content: "\f196";
+        }
+</style>
+

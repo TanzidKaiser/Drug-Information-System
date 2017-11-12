@@ -1,0 +1,683 @@
+﻿@using Drug_Information_System.Models;
+@model Drug_Information_System.Models.BaseModel
+@*@model IEnumerable<Drug_Information_System.Models.BaseModel>*@
+@{
+
+    dynamic user = Session["user"] as User;
+    dynamic socialUser = Session["user"] as SocialUser;
+
+
+    
+    
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    @*<link href="~/Content/Site.css" rel="stylesheet" />*@
+    @*<link href="~/Content/style.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+    <link href="~/Content/material.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" >
+    
+
+    <link href="~/Content/bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-social-gh-pages/assets/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="~/Content/DataTables/css/dataTables.jqueryui.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <link rel="icon" type="png" href="~/Content/Image/favicon2.png"/>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+
+        th, td {
+            text-align: center;
+        }
+    </style>
+
+    <style>
+
+        body {
+            padding-top: 50px;
+        }
+
+        .dropdown.dropdown-lg .dropdown-menu {
+            margin-top: -1px;
+            padding: 6px 20px;
+        }
+
+        .input-group-btn .btn-group {
+            display: flex !important;
+        }
+
+        
+
+        
+
+        
+    </style>
+
+
+</head>
+<body>
+
+    <div id="userView">
+        <nav class="navbar navbar-primary navbar-fixed-top bs-docs-nav" role="banner">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*<a class="navbar-brand" href="#"><img src="~/Content/Image/drug.png" alt=""></a>*@
+
+                    @Html.ActionLink("Drug Information System", "Index", "Home", null, new { @class = "navbar-brand" })
+
+                </div>
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+
+
+
+
+
+                    <div class="navbar-form navbar-left" role="search" id="searchDiv">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <div class="btn-group" role="group">
+
+
+
+
+                                    <div class="input-group-btn search-panel">
+                                        <button id="searchIndex" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span id="search_concept">Brand Name</span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#Brand_Name">Brand Name</a></li>
+                                            <li><a href="#Generic_Name">Generic Name</a></li>
+                                            <li><a href="#Indication_Name">Indication Name</a></li>
+                                            <li><a href="#Company_Name">Company Name</a></li>
+
+
+                                        </ul>
+                                    </div>
+                                    <input type="hidden" name="search_param" value="all" id="search_param">
+                                    <input type="text" id="drugSearchKey" class="form-control" placeholder="Enter Search Item...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" disabled><span class="glyphicon glyphicon-search"></span></button>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <ul class="nav navbar-nav navbar-right" style="font-size: 14px">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+
+                                <li>@Html.ActionLink("About Us", "Index", "About")</li>
+
+                                <li>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "About")</li>
+
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Contact", "Create", "Contact")</li>
+
+
+                        @if (user == null && socialUser == null)
+                        {
+                            <li>@Html.ActionLink("Sign Up", "Create", "Account")</li>
+                            <li>@Html.ActionLink("Sign In", "Login", "Account")</li>
+                        }
+                        else
+                        {
+                            if (user != null)
+                            {
+                                <li><a> <b>@user.FirstName @user.LastName</b> </a></li>
+                            }
+                            else if (socialUser != null)
+                            {
+                                <li><a> <b>@socialUser.FirstName @socialUser.LastName</b> </a></li>
+                            }
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                        }
+
+                    </ul>
+
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" style="font-size: 14px">
+
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("A to Z Drugs", "Index", "BrandInfo")</li>
+                        <li>@Html.ActionLink("Generic Name", "Index", "Generic")</li>
+                        <li>@Html.ActionLink("Class Name", "Indexs", "Class")</li>
+                        <li>@Html.ActionLink("Indication Name", "Index", "Indication")</li>
+                        <li>@Html.ActionLink("Company Name", "Index", "Company")</li>
+
+                        @if (user != null && user.OccupationsId == 1 && user.ProfessionId == 3)
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Prescription <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+
+                                    <li>@Html.ActionLink("Create New Prescription", "Index", "Prescription")</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>@Html.ActionLink("View All Prescription", "AllPrescription", "Prescription")</li>
+
+                                </ul>
+                            </li>
+                        }
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manifold <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+
+                                <li>@Html.ActionLink("Pharmaceutical Companies", "CompaniesInformation", "Manifold")</li>
+                                <li role="separator" class="divider"></li>
+                                <li>@Html.ActionLink("Hospitals & Clinics", "HospitalsAndClinicsInfo", "Manifold")</li>
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+
+
+                </div>
+
+
+            </div>
+        </nav>
+
+
+
+
+        <hr>
+        <div class="container body-content">
+
+            @RenderBody()
+
+            <footer style="clear: both; text-align: center">
+                <hr />
+                <p>Drugsbooks.com provides accurate and independent information on more than 17,000 prescription drugs, over-the-counter medicines and natural products. This material is provided for educational purposes only and is not intended for medical advice, diagnosis or treatment</p>
+
+                <p>&copy; Drug Information System - All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="adminView">
+
+        
+
+
+    </div>
+
+    
+
+
+    
+
+
+    <script src="~/Scripts/jquery.js"></script>
+    @*<script src="~/Scripts/bootstrap.js"></script>*@
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    
+
+
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
+    
+
+
+<script type="text/javascript">
+    
+    
+    $(document).ready(function (e) {
+
+        var title = document.title;
+        
+        if (title == "Home Page") {
+            document.getElementById('searchDiv').style.visibility = "hidden";
+        }
+
+    });
+
+    $(document).ready(function (e) {
+        $('.search-panel .dropdown-menu').find('a').click(function (e) {
+            e.preventDefault();
+            var param = $(this).attr("href").replace("#", "");
+            var concept = $(this).text();
+            $('.search-panel span#search_concept').text(concept);
+            $('.input-group #search_param').val(param);
+        });
+    });
+
+   
+    $(document).ready(function(e) {
+
+
+            var selectedItem = $('.search-panel span#search_concept').text();
+
+            if (selectedItem == "Brand Name") {
+                $("#drugSearchKey")
+                    .autocomplete({
+                        source: function(request, response) {
+                            $.ajax({
+                                url: '/Search/AllBrandNames',
+                                data: "{ 'prefix': '" + request.term + "'}",
+                                dataType: "json",
+                                type: "POST",
+                                contentType: "application/json; charset=utf-8",
+                                success: function(data) {
+
+                                    response(data);
+                                },
+                                error: function(responce) {
+                                    alert(response.responseText);
+                                },
+                            });
+                        },
+                        select: function(event, ui) {
+                            window.location.href = '/BrandInfo/Details/' +
+                                ui.item.id +
+                                '?genericId=' +
+                                ui.item.genericId;
+                        },
+                        minLength: 1
+                    })
+                    .autocomplete('instance')
+                    ._renderItem = function(ul, item) {
+                        return $('<li>')
+                            .append('<b>' + item.brandName + '</b>' + ' - ' + item.drugStrength + '  ' + item.drugForm)
+                            .appendTo(ul);
+                    }
+            }
+        });
+
+
+    $(document).ready(function (e) {
+        $('.search-panel .dropdown-menu').find('a').click(function (e) {
+            e.preventDefault();
+
+            var selectedItem = $(this).text();
+            
+            if (selectedItem == "Brand Name") {
+                $("#drugSearchKey")
+                    .autocomplete({
+                        source: function (request, response) {
+                            $.ajax({
+                                url: '/Search/AllBrandNames',
+                                data: "{ 'prefix': '" + request.term + "'}",
+                                dataType: "json",
+                                type: "POST",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (data) {
+
+                                    response(data);
+                                },
+                                error: function (responce) {
+                                    alert(response.responseText);
+                                },
+                            });
+                        },
+                        select: function (event, ui) {
+                            window.location.href = '/BrandInfo/Details/' + ui.item.id + '?genericId=' + ui.item.genericId;
+                        },
+                        minLength: 1
+                    }).autocomplete('instance')._renderItem = function (ul, item) {
+                        return $('<li>')
+
+                            .append('<b>' + item.brandName + '</b>' + ' - ' + item.drugStrength + '  ' + item.drugForm)
+                            .appendTo(ul);
+                    }
+            }
+
+
+            if (selectedItem == "Generic Name") {
+                $("#drugSearchKey")
+                       .autocomplete({
+                           source: function (request, response) {
+                               $.ajax({
+                                   url: '/Search/AllGenericNames',
+                                   data: "{ 'prefix': '" + request.term + "'}",
+                                   dataType: "json",
+                                   type: "POST",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function (data) {
+                                       response(data);
+
+                                   },
+                                   error: function (responce) {
+                                       alert(response.responseText);
+                                   },
+                               });
+                           },
+                           select: function (event, ui) {
+                               window.location.href = '/Generic/DrugInfo?genericId=' + ui.item.id;
+                           },
+                           minLength: 1
+                       }).autocomplete('instance')._renderItem = function (ul, item) {
+                           return $('<li>')
+
+                               .append('<b>' + item.genericName + '</b>')
+                               .appendTo(ul);
+                       }
+            }
+
+
+
+
+
+
+
+            if (selectedItem == "Indication Name") {
+                $("#drugSearchKey")
+                       .autocomplete({
+                           source: function (request, response) {
+                               $.ajax({
+                                   url: '/Search/AllIndicationNames',
+                                   data: "{ 'prefix': '" + request.term + "'}",
+                                   dataType: "json",
+                                   type: "POST",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function (data) {
+                                       response(data);
+
+                                   },
+                                   error: function (responce) {
+                                       alert(response.responseText);
+                                   },
+                               });
+                           },
+                           select: function (event, ui) {
+                               window.location.href = '/Indication/GenericData?indicationId=' + ui.item.id;
+                           },
+                           minLength: 1
+                       }).autocomplete('instance')._renderItem = function (ul, item) {
+                           return $('<li>')
+
+                               .append('<b>' + item.indicationName + '</b>')
+                               .appendTo(ul);
+                       }
+            }
+
+
+            if (selectedItem == "Company Name") {
+                $("#drugSearchKey")
+                       .autocomplete({
+                           source: function (request, response) {
+                               $.ajax({
+                                   url: '/Search/AllCompanyNames',
+                                   data: "{ 'prefix': '" + request.term + "'}",
+                                   dataType: "json",
+                                   type: "POST",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function (data) {
+                                       response(data);
+
+                                   },
+                                   error: function (responce) {
+                                       alert(response.responseText);
+                                   },
+                               });
+                           },
+                           select: function (event, ui) {
+                               window.location.href = '/Company/DrugInfo?pharmaId=' + ui.item.id;
+                           },
+                           minLength: 1
+                       }).autocomplete('instance')._renderItem = function (ul, item) {
+                           return $('<li>')
+
+                               .append('<b>' + item.pharmaNames + '</b>')
+                               .appendTo(ul);
+                       }
+            }
+
+        });
+    });
+
+
+
+
+
+    //Search function for home page
+
+
+    $(document).ready(function (e) {
+        $('.search-panel .dropdown-menu').find('a').click(function (e) {
+            e.preventDefault();
+            var param = $(this).attr("href").replace("#", "");
+            var concept = $(this).text();
+            $('.search-panel span#search_con').text(concept);
+            $('.input-group #search_par').val(param);
+        });
+    });
+
+
+    $(document).ready(function (e) {
+
+
+        var selectedItem = $('.search-panel span#search_con').text();
+
+        if (selectedItem == "Brand Name") {
+            $("#searchKey")
+                .autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: '/Search/AllBrandNames',
+                            data: "{ 'prefix': '" + request.term + "'}",
+                            dataType: "json",
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            success: function (data) {
+
+                                response(data);
+                            },
+                            error: function (responce) {
+                                alert(response.responseText);
+                            },
+                        });
+                    },
+                    select: function (event, ui) {
+                        window.location.href = '/BrandInfo/Details/' +
+                            ui.item.id +
+                            '?genericId=' +
+                            ui.item.genericId;
+                    },
+                    minLength: 1
+                })
+                .autocomplete('instance')
+                ._renderItem = function (ul, item) {
+                    return $('<li>')
+                        .append('<b>' + item.brandName + '</b>' + ' - ' + item.drugStrength + '  ' + item.drugForm)
+                        .appendTo(ul);
+                }
+        }
+    });
+
+
+    $(document).ready(function (e) {
+        $('.search-panel .dropdown-menu').find('a').click(function (e) {
+            e.preventDefault();
+
+            var selectedItem = $(this).text();
+
+            if (selectedItem == "Brand Name") {
+                $("#searchKey")
+                    .autocomplete({
+                        source: function (request, response) {
+                            $.ajax({
+                                url: '/Search/AllBrandNames',
+                                data: "{ 'prefix': '" + request.term + "'}",
+                                dataType: "json",
+                                type: "POST",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (data) {
+
+                                    response(data);
+                                },
+                                error: function (responce) {
+                                    alert(response.responseText);
+                                },
+                            });
+                        },
+                        select: function (event, ui) {
+                            window.location.href = '/BrandInfo/Details/' + ui.item.id + '?genericId=' + ui.item.genericId;
+                        },
+                        minLength: 1
+                    }).autocomplete('instance')._renderItem = function (ul, item) {
+                        return $('<li>')
+
+                            .append('<b>' + item.brandName + '</b>' + ' - ' + item.drugStrength + '  ' + item.drugForm)
+                            .appendTo(ul);
+                    }
+            }
+
+
+            if (selectedItem == "Generic Name") {
+                $("#searchKey")
+                       .autocomplete({
+                           source: function (request, response) {
+                               $.ajax({
+                                   url: '/Search/AllGenericNames',
+                                   data: "{ 'prefix': '" + request.term + "'}",
+                                   dataType: "json",
+                                   type: "POST",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function (data) {
+                                       response(data);
+
+                                   },
+                                   error: function (responce) {
+                                       alert(response.responseText);
+                                   },
+                               });
+                           },
+                           select: function (event, ui) {
+                               window.location.href = '/Generic/DrugInfo?genericId=' + ui.item.id;
+                           },
+                           minLength: 1
+                       }).autocomplete('instance')._renderItem = function (ul, item) {
+                           return $('<li>')
+
+                               .append('<b>' + item.genericName + '</b>')
+                               .appendTo(ul);
+                       }
+            }
+
+
+
+
+
+
+
+            if (selectedItem == "Indication Name") {
+                $("#searchKey")
+                       .autocomplete({
+                           source: function (request, response) {
+                               $.ajax({
+                                   url: '/Search/AllIndicationNames',
+                                   data: "{ 'prefix': '" + request.term + "'}",
+                                   dataType: "json",
+                                   type: "POST",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function (data) {
+                                       response(data);
+
+                                   },
+                                   error: function (responce) {
+                                       alert(response.responseText);
+                                   },
+                               });
+                           },
+                           select: function (event, ui) {
+                               window.location.href = '/Indication/GenericData?indicationId=' + ui.item.id;
+                           },
+                           minLength: 1
+                       }).autocomplete('instance')._renderItem = function (ul, item) {
+                           return $('<li>')
+
+                               .append('<b>' + item.indicationName + '</b>')
+                               .appendTo(ul);
+                       }
+            }
+
+
+            if (selectedItem == "Company Name") {
+                $("#searchKey")
+                       .autocomplete({
+                           source: function (request, response) {
+                               $.ajax({
+                                   url: '/Search/AllCompanyNames',
+                                   data: "{ 'prefix': '" + request.term + "'}",
+                                   dataType: "json",
+                                   type: "POST",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function (data) {
+                                       response(data);
+
+                                   },
+                                   error: function (responce) {
+                                       alert(response.responseText);
+                                   },
+                               });
+                           },
+                           select: function (event, ui) {
+                               window.location.href = '/Company/DrugInfo?pharmaId=' + ui.item.id;
+                           },
+                           minLength: 1
+                       }).autocomplete('instance')._renderItem = function (ul, item) {
+                           return $('<li>')
+
+                               .append('<b>' + item.pharmaNames + '</b>')
+                               .appendTo(ul);
+                       }
+            }
+
+        });
+    });
+   
+
+</script>
+
+</body>
+</html>

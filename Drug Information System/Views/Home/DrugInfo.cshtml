@@ -1,0 +1,83 @@
+﻿@model Drug_Information_System.Models.DrugBrandInfo
+
+@{
+    ViewBag.Title = "DrugInfo";
+    dynamic genericName = ViewBag.GenericName;
+    dynamic brandInfos = ViewBag.BrandInfos;
+}
+
+<h2>Generic Name : @genericName</h2>
+<hr>
+
+
+
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>Brand Name</th>
+            <th>Drug Form</th>
+            <th>Pack Size</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr>
+            <th>Brand Name</th>
+            <th>Drug Form</th>
+            <th>Pack Size</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in brandInfos)
+        {
+            <tr>
+
+                <td>
+                    @item.BrandName
+                </td>
+                <td>
+                    @item.DrugForm
+                </td>
+                <td>
+                    @item.PackSize
+                </td>
+                <td>
+                    @item.Price
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Details", "Details", new { id = item.Id, genericId = item.GenericId }, new { @class = "btn btn-info" })
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document)
+            .ready(function () {
+                $('#myTable').DataTable({ responsive: true });
+
+            });
+
+
+    </script>
+
+}

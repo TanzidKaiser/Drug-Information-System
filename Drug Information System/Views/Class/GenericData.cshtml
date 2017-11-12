@@ -1,0 +1,62 @@
+﻿@model Drug_Information_System.Models.DrugBrandInfo
+
+@{
+    ViewBag.Title = "Indications";
+    dynamic genericInfo = ViewBag.GenericsInfo;
+    dynamic therapiticName = ViewBag.TherapiticName;
+}
+
+<h2> All Generic Names of @therapiticName</h2>
+<hr>
+
+
+
+<table id="myTable" class="table">
+    <thead>
+        <tr class="info">
+            <th>Generic Name</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr class="danger">
+            <th>Generic Name</th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in genericInfo)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink((string)item.GenericName.ToString(), "DrugInfo", new { genericId = item.Id })
+
+                </td>
+                <td> </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+   <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document)
+        .ready(function () {
+            $('#myTable').DataTable({ responsive: true });
+
+        });
+
+</script>
+
+
+
+}

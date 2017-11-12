@@ -1,0 +1,112 @@
+﻿@model Drug_Information_System.Models.DrugGeneric
+
+@{
+    ViewBag.Title = "Index";
+
+    dynamic topGeneric = ViewBag.TopGenericName;
+    
+}
+
+<h2>All Generic Names</h2>
+<hr>
+
+
+<div class="topGeneric">
+    <table class="table">
+        <thead>
+            <tr class="danger">
+                <th>
+                    <h4><b>Popular Generic Name</b></h4>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in topGeneric)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink((string)@item.GenericName, "DrugInfo", new { genericId = item.GenericId })
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+
+
+
+    
+</div>
+
+<div class="allGeneric">
+    <table id="myTable" class="table">
+        <thead>
+            <tr class="info">
+                <th> Generic Name </th>
+
+                <th></th>
+            </tr>
+        </thead>
+
+    </table>
+</div>
+
+<style>
+    .topGeneric {
+        height: auto;
+        text-align: center;
+        float: right;
+        width: 30% !important;
+    }
+
+    .allGeneric {
+        float: left;
+        border-right: 1px solid grey;
+        width: 65% !important;
+    }
+
+</style>
+
+
+
+@section Scripts {
+    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document)
+        .ready(function () {
+            $("#myTable")
+                .DataTable({
+                    "processing": true,
+                    "serverSide": true,
+                    "filter": true,
+                    "orderMulti": false,
+                    "ajax": {
+                        "url": "/Generic/LoadDataForGenericName",
+                        "type": "POST",
+                        "datatype": "json"
+                    },
+
+                    "columns": [
+                        
+                        {   
+                            "mDataProp": function (source, type, val) {
+                                return '<a href=/Generic/DrugInfo?genericId=' + source.Id + '>' + source.GenericName + '</a>';
+
+                            }, "bSortable": true
+                        }
+                        
+
+                    ]
+                });
+        });
+</script>
+
+
+
+    
+
+}

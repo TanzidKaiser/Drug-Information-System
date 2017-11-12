@@ -1,0 +1,646 @@
+Id,PharmaName
+1,Ablation Pharmaceuticals Ltd.
+2,ACI Limited
+3,Acme Laboratories Ltd.
+4,Acme Specialized Pharmaceuticals Ltd.
+5,Ad-din Pharmaceuticals Ltd.
+6,Adco Pharmaceuticals & Chemicals Ltd.
+7,Advent Pharma Ltd.
+8,Aexim Pharmaceuticals Ltd.
+9,Agrani Pharmaceuticals
+10,Al-Madina Pharmaceuticals Ltd.
+11,Albert David (BD) Limited
+12,Albion Laboratories Ltd.
+13,Alco Pharma Limited
+14,Alkad Laboratories
+15,Alpha Pharmaceuticals
+16,Ambee Pharmaceuticals Ltd.
+17,Amico Laboratories Ltd.
+18,Amulet Pharmaceuticals Ltd.
+19,APC Pharma Ltd.
+20,Apex Pharmaceuticals Ltd.
+21,Apollo Pharmaceutical Laboratories Ltd.
+22,Aristopharma Limited
+23,Asiatic Laboratories Ltd.
+24,Astra Biopharmaceuticals Ltd.
+25,Avert Pharma Ltd.
+26,Aztec Pharmaceuticals
+27,Bangladesh Antibiotic Industries Limited
+28,Bangladesh Immunity Co.
+29,Bangladesh Oxygen Ltd.
+30,BC Laboratories Ltd.
+31,Beacon Pharmaceuticals Ltd.
+33,Belsen Pharmaceuticals Ltd.
+34,Bengal Drugs & Chemical Works Pharm. Ltd.
+35,Bengal Techno Pharma Ltd.
+36,Benham Pharmaceuticals Ltd.
+37,Beximco Pharmaceuticals Ltd.
+39,Bikalpa Friends Pharmaceuticals Ltd.
+40,Bio Pharma Laboratories Ltd.
+41,Bios Pharmaceutical Ltd.
+43,Blubell Laboratories Ltd.
+44,Boichem Pharmaceutical
+45,Bosco Laboratory
+46,Bridge Pharmaceuticals Ltd.
+47,Bristol Pharma Ltd.
+48,BS Industries Ltd.
+49,Care Pharma Laboratories Ltd.
+50,Carew & Co.
+51,Central Pharmaceutical Ltd.
+52,Chemist Laboratories Ltd.
+53,Cipla Ltd.
+54,City Chemicals & Pharmaceuticals Works Ltd.
+56,Comilla Laboratories Ltd.
+57,Concord Pharmaceuticals Ltd.
+58,Cosmic Chemical Industries Ltd.
+59,Cosmo Pharma Laboratories Ltd.
+60,Cresent Pharmaceuticals
+61,Crystal Pharmaceuticals Ltd.
+62,Decent Pharma Laboratories Ltd.
+63,Delta Pharma Limited
+64,Desh Pharmaceuticals Ltd.
+65,Doctor Tims Pharmaceuticals Ltd.
+66,Doctor's Chemicals Works Ltd.
+67,Dolphin Pharmaceuticals Ltd.
+68,Doms Pharmaceuticals
+70,Dr. Jalil's Pharma (Pvt) Ltd.
+71,Drug International Ltd.
+73,Drugland Limited
+75,Eastern Drug Co. (Pvt.) Ltd.
+76,Eastern Pharmaceuticals Ltd.
+78,EDCL (Dhaka)
+79,Edruc Ltd.
+80,Eon Pharmaceuticals Ltd.
+81,Eskayef Bangladesh Ltd.
+83,Ethical Drug Ltd.
+84,Euro Pharma Ltd.
+85,Everest Pharmaceuticals Ltd.
+86,F N F Pharmaceuticals Ltd.
+87,G. A. Company Ltd.
+88,G.M. Laboratory
+89,G.P.I. Ltd.
+91,General Pharmaceuticals Ltd.
+92,Gentry Pharmaceuticals Ltd.
+93,GlaxoSmithKline Bangladesh Ltd.
+94,Global Heavy Chemicals Ltd.
+95,Global s Ltd.
+97,Globe Drug Ltd
+98,Globe Laboratories (Pvt.) Ltd.
+99,Globe Pharmaceuticals Ltd.
+101,Globex Pharmaceuticals Ltd.
+104,Gonoshasthaya Pharmaceuticals Ltd.
+105,Great Bengal Chemical & Pharmaceuticals Works (Suspended)
+106,Green Laboratory
+107,Greenland Pharmaceuticals Ltd.
+108,Guardian Healthcare Ltd.
+109,Hallmark Pharmaceuticals Ltd.
+110,Healthcare Pharmaceuticals Ltd.
+111,Hope Pharmaceuticals Ltd.
+112,Hudson Pharmaceuticals Ltd.
+113,Huqsons Laboratories Ltd. Suspened
+114,Hydroxide Ltd.
+115,Ibn Sina Pharmaceutical Ind. Ltd.
+116,Incepta Pharmaceuticals Ltd.
+119,Indobangla Pharmaceuticals
+120,Innova Phrmaceutical Ltd.
+121,Institute of Public Health
+122,Islami Pharmaceutical Industries Ltd.
+123,J C I Bangladesh Ltd
+124,Jalalabad Pharmaceuticals Ltd.
+125,Jalpha Laboratories Ltd.
+126,Jams Pharmaceuticals Ltd.
+127,Janasheba Pharmaceuticals Ltd.
+128,Jayson Pharmaceuticals Ltd.
+129,JMI Syringes & Medical Devices Ltd.
+130,Kafma Pharmaceuticals Ltd.
+131,Kasiruddin Chemical Works (pvt) Ltd. (Suspended)
+132,KDH Laboratories Ltd.
+133,Kemiko Pharmaceuticals Ltd.
+134,Kumudini Pharma Ltd.
+135,Labaid Pharmaceuticals Ltd.
+136,Leon Pharmaceuticals Ltd.
+138,Libra Pharmaceuticls Ltd.
+139,Links Pharma
+140,Loly Pharma (Vet)
+141,Mafnaz Pharmaceuticals Ltd.
+142,Maks Drugs Ltd.
+143,Marksman Pharmaceutical Ltd.
+144,Maxborn Pharmaceuticals Ltd.
+145,Medico Pharmaceuticals Ltd.
+146,Medicon Pharmaceuticals Ltd.
+147,Medimet Pharmaceuticals Ltd.
+148,Microbe Laboratories Ltd.
+149,Mig Pharmaceutical Ltd.
+150,Millat Pharmaceuticals Ltd.
+151,Modern Pharmaceuticals Ltd.
+152,Momotaz Pharmaceuticals Ltd.
+153,Monicopharma Limited
+154,Monomedi Bangladesh Ltd.
+155,Mundipharma (Bangladesh) Pvt. Ltd.
+156,Mystic Pharmaceuticals Ltd.
+157,Naafco Pharma Ltd.
+158,Najat Pharma Co. (Suspended)
+159,Natal Chemical Ind.
+160,National Drug Company Ltd.
+161,National Laboratories Ltd.
+163,Navana Pharmaceuticals Ltd.
+164,Nip Chemicals And Pharmaceuticals Ltd.
+165,Nipa Pharmaceuticals Ltd.
+167,NIPRO JMI Pharma Limited
+168,North Bengal Pharmaceuticals Ltd.
+169,Novartis (Bangladesh) Ltd.
+170,Novelta Bestway Pharmaceuticals Ltd.
+171,Novo Healthcare and Pharma Ltd.
+173,Novus Pharmaceuticals Ltd.
+174,Nuvista Pharma Ltd
+175,Oasis Laboratories Ltd.
+176,Opso Saline Ltd.
+178,Opsonin Pharma Limited
+179,Orbit Pharmaceuticals Ltd.
+180,Organic Health Care
+182,Orion Pharma Ltd.
+183,Oyster Pharmaceuticals Ltd.
+184,Pacific Pharmaceuticals Ltd.
+185,Paradise Chemical Industries
+187,Peoples Pharma Ltd.
+188,Pharmacil Ltd.
+189,Pharmaco International Ltd.
+190,Pharmadesh Laboratories Ltd.
+191,Pharmasia Ltd.
+192,Pharmatek Chemicals Ltd.
+193,Pharmik Laboratories Ltd.
+194,Phoenix Chemicals Laboratories (BD) Ltd.
+195,Pioneer Pharmaceutical Ltd
+196,Pip Limited
+198,Popular Pharmaceuticals Ltd.
+199,Premier Pharmaceuticals
+200,Prime Pharmaceuticals Ltd.
+201,Pubali Pharmaceutical
+203,Quality Pharmaceuticals Ltd.
+204,R.D.C.C.S. Limited
+205,Radiant Pharmaceutical Ltd.
+206,Rahman Chemicals Ltd.
+207,RAK Pharmaceuticals Ltd.
+208,Rampart-Power Bangladesh Ltd.
+209,Rangs Medicine
+210,Rangs Pharmaceuticals Ltd.
+211,Rasa Pharmaceuticals Ltd.
+212,Reckitt & Benckiser Bangladesh Ltd.
+213,Reliable Drugs & Chemicals
+214,Reliance Laboratories Ltd.
+215,Reliance Pharmaceuticals Ltd.
+216,Reman Drug Laboratories Ltd.
+217,Remex Pharmaceuticals
+218,Remo Chemical Ltd.
+219,Renata Limited
+221,Rephco Pharmaceuticals Ltd.
+222,Rex Pharma
+223,Rid Pharma Ltd.
+224,RN Pharmaceuticals
+225,Roche Bangladesh Pharmaceutical
+226,Royal Pharmaceutical
+227,S. N. Pharmaceuticals Ltd.
+228,Salton Pharmaceuticals Ltd.
+229,Sanofi Aventis (BD) Ltd.
+230,Sarma Chemical Works Ltd.
+231,Save Pharmaceutical
+232,Seba Laboratories Ltd.
+233,Seema Pharmaceuticals Ltd.
+234,Seftchem Ltd.
+235,Shamsul Al-Amin Pharmaceuticals Ltd.
+236,Sharif Pharmaceuticals Ltd.
+237,Sheba Chemicals Industries Ltd.
+238,Silco Pharmaceuticlas Ltd.
+239,Silva Pharmaceuticals Ltd.
+240,Skylab Ltd.
+241,Social Marketing Company
+243,Somatec Pharmaceuticals Ltd.
+244,Sonear Laboratories Ltd.
+245,Sonergaon Chemical Complex (pvt) Ltd.
+246,Sony Pharmaceutical Ltd.
+247,Spark Pharmaceutical Ltd.
+248,Spectra Oxygen Limited
+249,Square Cephalosporins Ltd.
+250,Square Pharmaceuticals Ltd.
+253,Standard Laboratories Ltd.
+254,Stars Pharmaceuticals Ltd.
+255,Sun Pharmaceutical (Bangladesh) Ltd.
+256,Sunypun Pharmaceutical Ltd.
+257,Super Power Pharmaceuticals Ltd.
+258,Supreme Pharmaceuticals Ltd.
+259,Syntho Laboratories Ltd.
+260,Techno Drugs Ltd.
+262,Theraputics (BD) Ltd.
+263,Tropical Pharmaceuticals Ltd.
+264,Ultra Pharma Ltd.
+265,Unimed & Unihealth Manufacturers Ltd.
+266,Union Pharmaceuticals Ltd.
+267,Unique Pharmaceutical Ltd.
+268,United Chemicals & Pharmaceuticals Ltd.
+271,Universal Pharmaceuticals Ltd.
+272,Veritas Pharmaceuticals Ltd.
+273,Virgo Pharmaceuticals Ltd.
+274,Weinberg Pharmaceuticals
+275,Wellcome Chemical
+276,White Horse Pharma
+277,"Zaman Pharmaceutical Ltd,"
+278,Zenith Pharmaceuticals Ltd.
+279,Ziska Pharmaceuticals Ltd.
+280,245-3410(V)-98
+281,"A/S Lundbeck Export DivisionLtd., Denmark"
+283,"Abbott HealthcareProducts,Netherlands"
+284,"Abbott Laboratories Ltd., Pakistan"
+285,"Abbott Laboratories Ltd., USA"
+286,"Abbott Laboratories, UK"
+287,"Ace Chemicals,UK"
+288,"Actavis Italy SpA, Italy"
+289,"Actavis, UK"
+290,"Advanced Medical Optics UppsalaAB, Sweden"
+291,"Aesica Queenborough Limited, UK"
+292,"Alcon Cannada Inc., Canada"
+293,"Alcon Laboratories Inc, USA"
+296,"Allergan Inc, USA"
+300,"Allergan Pharmaceuticals Ltd.,Ireland"
+303,"Allergan Sales LLC, USA"
+304,"Alpha Therapeutic Corporation,USA"
+305,"Anhui Kangning Industrial (Group)Co. Ltd., China"
+306,Anji Sunlight Medical Products Co.Ltd. China
+309,"Antec International Ltd., U.K."
+313,"Aspen Bad Oldesloe, Germany"
+314,"Asta Medica AG, Germany"
+315,"Astral Pharmaceuticals Industries,India"
+316,"Aventis Behring GmbH, Germany"
+317,Aventis Pasteur S.A. France
+320,"Aventis Pharma, Dagenham, UK"
+321,"Aventis Pharma, France"
+322,"Aventis Pharma, Germany"
+323,"Aventis Pharma, UK"
+325,"Axcentive Sarl, France"
+326,"Ayerst Wyeth PharmaceuticalsInc.,"
+329,"B. Braun Melsungen Ag, Germany"
+330,"Baxter Ag, Australia"
+331,"Baxter AG, Austria"
+332,"Baxter Healthcare SA, Singapore"
+333,"Baxter Oncology Gmbh, Germany"
+335,"Bayer Pharma AG Berlin,Germany"
+336,"Bayer SChering Pharma Oy,Finland"
+337,"Becton Dickinson and Company,USA"
+338,"Behringwerke AG, Germany"
+339,"Beijing Fresenius KabiPharmacutical co. Ltd., China"
+340,"Bene Arzneimittel GmbH,Germany"
+341,"Berna Biotech Ltd., Switzerland"
+342,"Berna Biotech, Korea"
+343,"Bestar Laboratories (Singapore)Pte Ltd., Singapore"
+345,"Biogen & Co. Ltd., Korea"
+347,"Biomune Company, USA"
+349,"Biomune de Mexico S.de R L CV., Mexico"
+350,"Biopharm, Research Institute ofBiopharmacy and veterinaryDrugs, Czech Republic"
+352,"Bioveta, Czech Republic"
+353,Bomac Laboratories Limited NewZearland
+355,"Bracco S.P.A, Italy"
+356,"Bremer Pharma GmbH, Germany"
+357,"Bristol Caribbean, USA"
+358,"Bristol Myers Squibb Pvt. Ltd.,USA"
+360,"Bristol-Myers, Italy"
+361,"C.B. Fleet Company Inc, USA"
+362,"Ceva Phylaxia, Hungary"
+363,"CEVA Phylaxia, VeterinaryBiological Company, Hungary"
+364,"Ceva-Phylaxia VeterinaryBiological Co. Ltd., Hungary"
+365,"CEVA-PHYLAXIA VeterinaryBiologicals Co. Ltd., Hungary"
+366,"Cheil Bio Co. Ltd., Korea"
+367,"Chemial Works of Gedeon RichterLtd., Hungary"
+370,"Chiron Behring Vaccine Pvt. Ltd.,"
+371,"Choong Ang Animal DiseaseLaboratory, Korea"
+372,"Choong Ang VaccineLaboratory,Korea."
+375,"Choongwae Pharma Corporation,Korea"
+376,"Ciba Geigy Ltd., Switzerland"
+377,"Ciba Vision Ag, Switzerland"
+378,"CID Lines N.V Waterpoorstraat 2,Belgium"
+379,"Cilag AG, Switzerland"
+380,"Claris Lifesciences Ltd., India"
+381,Closed Joint-Stock Company
+382,"CLS Pharma ,France"
+383,"CNN-Laboratoria veterinario Ltda.,Hungary"
+384,"Coophavate,France"
+387,"Coophavet, France"
+388,"Coventry Chemicals Limited, EU"
+389,"CSL Behring Ag, Switzeland"
+390,"CSL Behring GmbH, Germany"
+392,"Dabur Pharmaceuticals Ltd., India"
+393,"Dae Sung Microbiological Labs,korea"
+394,"DaOne Chemical Co. Ltd., Korea"
+395,"Denex International, India"
+396,Dong Bang Co. Ltd. Korea
+397,"Dong Kook Pharmaceutical, Korea"
+398,"Dopharma International,Netherlands"
+399,"Eagle Vet. Tech Co., Ltd., Korea"
+400,"Eastern Medikit Limited, India"
+402,"Ebew Pharma,Austria"
+403,"Eco Animal Health Ltd., UK"
+404,"Egis Pharmaceuticals, Hungary"
+405,"Elanco Animal Health, USA"
+407,Eli Lilly and Company USA
+408,"Eli Lilly France SA, France"
+409,"Eli Lilly Italia SpA, Italy"
+410,"Evans Vanodine International, UK"
+412,"Ewabo Chemikalien GmbH,Germany"
+413,"Excella, Germany"
+415,"Excelvision AG, Switzerland"
+416,"F. H. Faulding & Co., Ltd.,Australia"
+418,"F. Hoffmann La Roche,Switzerland"
+419,"F. Hoffmann, Switzerland"
+421,F. Hoffmann-La Roche Ltd.Switzerland
+422,"F. Hoffmann-La Roche Ltd.,Canada"
+425,"F.Hoffmann La Roche, Switzerland"
+427,F.Hoffmann-La Roche Ltd.Germany
+429,"Fam Vanodione International, UK"
+430,"Famy Care Lrtd., India"
+431,"Fatro SpA, Italy"
+432,"Ferring GmbH, Germany"
+433,"Fidia Farmaceutical SPA, Italy"
+434,"Fisons Limited, UK"
+435,"Fort Dodge Animal Health, USA"
+436,"Fresenius Kabi (Guangzhou) Co.Ltd., China"
+437,"Fresenius Kabi Austria GmbH,Austria"
+438,"Fresenius Kabi DeutschlandGmbH, Germany"
+440,"Fresenius Medical CareDeustshland, Germany"
+441,"Fresinus Kabi Austria GmbH,Austria"
+442,"Galxo Wellcome, France"
+443,"GE Health Care., Ireland"
+446,"Genentech Inc, USA"
+448,"Genentech Inc., USA"
+449,"Glaxo Operations UK Ltd., UK"
+450,"Glaxo Smith Klin ,Australia"
+451,"Glaxo Smith Kline Bioglan SA,Belgium"
+452,"Glaxo Smith Kline Biological S.A.,Belgium"
+455,"Glaxo Smith Kline SpA, Italy"
+457,"Glaxo SmithKline Biological S.A.,Belgium"
+460,"Glaxo Wellcome GmbH, Germany"
+461,"Glaxo Wellcome Operations, UK"
+462,"Glaxo Wellcome Production,France"
+463,"Glaxo Wellcome Spa, Italy"
+465,"GlaxoSmithkline Biologicals S.A,Australia"
+466,"GlaxoSmithkline Biologicals S.A,Belgium"
+468,"GlaxoSmithKline Biologicals,Germany"
+469,"Godecke GmbH, Germany"
+470,"Gosun Pharma Co. Ltd., China"
+471,"GP Grenzach Produktion GmbH,Germany"
+472,"Green Cross GuangzhouPharmaceutical Co. Ltd., China"
+473,Green Cross veterinary productsCo. Ltd. Korea
+476,"Grifols Biologicals Inc, USA"
+477,"Gruppo Lepetit Srl, Italy"
+479,"H. Lundbeck & Co., A/S, Denmark"
+480,"H. Lundbeck A/S, Ottiliavej,Denmark"
+481,"Haiou Medical Appliance Co.,Chine"
+482,"Halocarbone Laboratories, USA"
+483,"Hamdard Lab. (Waqf), Pakistan"
+484,"Hameln Pharma Plus GmbH,Germany"
+486,Hangdong Co.Ltd. Korea
+488,"Haupt Pharma, Germany"
+489,Hexal Ag Germany by EbewePharma Austria
+490,"Hexal Ag, Austria"
+491,"Hexal ag, Germany"
+492,"HLL Life Care Limited, India"
+494,"Hoechst Marion RousselDeutschland GmbH, Germany"
+495,"Hoechst Roussel Vet Private Ltd.,India"
+496,"Hoechstl Aventis Pharma,Germany"
+497,Hoffman-La Roche Ltd.Switzerland
+499,"Hospira Australia Pty Ltd.,Australia"
+500,"Hospira Australia Pvt. Ltd.,Australia"
+501,Huaian wanjia Medical Divice Co.Ltd. China
+502,"Instituto Grifols S.A., Spain"
+503,"Instituto Sierovaccinogeno ItalianoSpa, Italy"
+505,"Intervet International B.V,Netherland"
+506,"Intervet International B.V., Holland"
+510,"Intervet International,Netherland"
+512,"IZO S.p.A Via Bianchi, Italy"
+514,"Janseen Pharmaceutica, Belgium"
+517,Jhon Wyeth & Brother Ltd. UK andMarketing Authorisation HolderWyeth Lederle Vaccine SABelgium
+518,"JHP Pharmaceuticals, USA"
+519,Jiaxing Tianhe Pharmaceutical Co.Ltd. China
+522,"JMS Singapore Pte Ltd.,Singapore"
+525,"Kanters Middenakkerweg,Netherlands"
+526,"Kawasumi Laboratories, Thailand"
+528,KBNP Inc. Korea
+531,"Kedrion, Italy"
+532,"Kela Laboratoria, Belgium"
+533,"Kela N.V., Belgium"
+534,"Kepro B.V Maagdenburgstarrt,Netherland"
+535,"Kepro BV Compagnieweg, TheNetherlands"
+538,Komipharm International Co.Ltd. Korea
+541,"Korea Thumb Vet Co. Ltd., Korea"
+543,"Koream Vetchem Co., Korea"
+544,"Kyowa Hakko KivinCo. Ltd., Japan"
+545,"Kyowa Hakko Kogyo Co., Ltd.,Japan"
+547,"Laboratories Crinex, France"
+548,"Laboratories Hipra S.A., Spain"
+550,Laboratories Ovejero S.A Spain
+553,"Laboratories Panpharma, France"
+554,Laboratories Sogeval
+555,"Laboratorio Aldo-Union, Spain"
+556,"Laboratorios Hipra SA, Spain"
+558,"Lavipharm S.A, Greece"
+559,"Leiras OY, Finland"
+560,"Lek dd Ljubljana Pharmaceutical &Chemical Co., Slovenia"
+561,"Leo Pharmaceutical Products,Denmark"
+563,"Les Laboratories Servier Industrie,France"
+566,"LFB Biomedicaments, France"
+567,"LG Life Sciences Ltd.(LGLS),Korea"
+568,"Lilly Deutsch Land GmbH,Germany"
+569,"Lilly Egypt, Egypt"
+571,"Lilly France SA, France"
+572,"Lilly, France"
+573,"Lohmann Animal HealthInternational, USA"
+574,"Lohmann Animal Health GmbH &Co., Germany"
+577,"LTS Lohmann Therapie-Systeme,Germany"
+578,"M/S Meril select Inc,U.S.A"
+579,"M/s Organon,Holland"
+580,"M/S. LG Life Sciences Ltd., Korea"
+581,Made for F. Hoffmann-La RocheLtd. Switzerland By RocheDiagnostic GmbH Germany
+582,"Mallinckrodt Inc., USA"
+583,"Mayne Pharma Pty Ltd., Australia"
+584,"Mayne Pharma Pty. Ltd., Germany"
+586,Medac Gesellschaft fur Klinischespezialpraparate Germany
+588,"Medica AG, Germany"
+589,"Medipro Medikal Uruler San.,Turkey"
+590,"Merck , Italy"
+591,"Merck KGaA, Germany"
+592,"Merck Serono S.A., Switzerland"
+593,"Merck Serono S.p.A, Italy"
+597,"Merial Biological Laboratory, UK"
+598,"Merial Italia S.p. A., Italy"
+600,"Merial Select, Inc., USA"
+603,"Merial, France"
+604,"Merial, U.K"
+605,"Merial,France"
+606,"Mika Pharma GmbH, Germany"
+607,"N V Organon OSS, Holland"
+608,"N. V. Organon, Netherlands"
+609,"N.V. Organon, Holland"
+611,"N.V. Upjohn S.A., Belgium"
+612,"Nantong Egens Biotechinology Co.Ltd., China"
+613,"Nephron Pharma, USA"
+614,"Nippon Kayaku Co Ltd,.Japan"
+616,"Norbrook Laboratories Ltd.,Ireland"
+617,"Novartis Farma SpA, Italy"
+619,"Novartis Farmaceutica S.A., Spain"
+622,"Novartis Opthalmics, Switzerland"
+623,"Novartis Pharma AG, Switzerland"
+625,Novartis Pharma Ag. Germany
+626,Novartis Pharma Ag. Switerland
+627,"Novartis Pharma GmbH, Germany"
+628,"Novartis Pharma SA, China"
+629,"Novartis Pharma SA, France"
+630,Novartis Pharma Switzerland
+631,"Novartis Pharma, France"
+634,"Novartis Pharmaceuticals, UK"
+635,Novartis Vaccine and DiagnosticsGermany
+636,Novartis Vaccines & DiagnosticsS.r.l Italy
+638,"Novo Industri A/S, Denmark"
+639,Novo Nordisk A/S Denmark
+642,"Nycomed GmbH, USA"
+643,"Nycomed, Germany"
+644,"Octapharma Pharmazeutika mbH,Germany"
+645,"Oculus Innovative Sciences, USA"
+646,"Organon (Ireland) Ltd., Ireland"
+649,"Organon Iteland Ltd., Organon"
+650,Orion Corporation Finland
+652,"Pacific Hospital Supply Co., Ltd.,USA"
+654,"Pacsun Industrial Co. Ltd., Korea"
+655,"Pasteur Merieux Serums andVaccines, France"
+656,"Patheon Inc., Canada"
+658,Pfizer (perth) Pty. Ltd. Australia
+661,"Pfizer Animal Health, USA"
+663,"Pfizer Italia Srl, Italy"
+664,Pfizer Manufacturing deutchslandGermany
+665,"Pfizer Manufacturing, Belgium"
+667,"Pfizer PGM, France"
+668,"Pfizer Pharmaceuticals, Ireland"
+669,"Pfizer Puus SP.A, Italy"
+670,"Pfizer Puus SP.A,., Belgium"
+671,"Pfizer Spa, Italy"
+672,"Pfizer, Belgium"
+673,"Pfizer, Canada"
+675,Pharmachemie B. V. Netherlands
+677,"Pharmachemie B.V., Holland"
+679,"Pharmacia Spa, Italy"
+680,Pharmacosmos
+681,Pharmathen S.A Greece
+682,"Plasmapharm Sera GmbH & Co.,Austria"
+683,"Polichem S.A., Spain"
+684,"Premier Enterprises, India"
+685,"Procter & Gumble, Germany"
+686,"Quatchem Limited, Uk"
+687,"R. P. Scherer GmbH, Germany"
+689,"Reckitt & Colman Products Ltd., UK"
+690,"Riemser Arzneimittel AG,Germany"
+691,"Roche Diagnostic, GermanyUnder Licence Roche, Swiss"
+692,"Roche Diagnostics GmbH,Germany"
+693,"Roche Fontenay, France"
+694,"Roche Spa, ItalyF. Hoffmann La Roche,Switzerland"
+695,"Roche SpA, Italy"
+696,"Rotexmedica GmbH, Germany"
+699,"S. A. Alcon Couvereur NV,Belgium"
+700,"S. A. Alcon Couvreur N.V.,Belgium"
+706,"S.C Sindan Pharma S.R.l,Romania"
+707,S.C Sindan Pharma S.R.LkRomania
+708,"S.P Veterinaria, s.a, Spain"
+709,Samyang Anipharm Co. Ltd. Korea
+710,"Samyang Pharma ChemicalsCo.Ltd,, Korea"
+711,"Sandoz GmbH, Austria"
+712,Sandoz Private Ltd. India
+714,"Sanofi Aventis Pasteur SA, France"
+715,"Sanofi Aventis, Germany"
+717,"Sanofi Pasteur Lyon, France"
+718,"Sanofi Pasteur S A ,France"
+725,"Sanofi Winthrop Industries,France"
+727,"Sanofi-aventis DeutschlandGmbH, Germany"
+729,"SBL Vaccin AB, Sweden"
+730,"Schering A.G, Germany"
+731,"Schering Plough, Ireland"
+732,"Schering- Plough Animal HealthCorp., USA"
+733,"ScheringOy,Pansiontie,47,20210Turku, Finland"
+735,"Schwarz Pharma, USA"
+736,"Senexi Sas Fontenay-Sous-Bois,France"
+737,"Senixi SAS, France"
+738,"Serono Pharma Ltd., UK"
+739,"Serono Pharma Spa, Italy"
+740,"Serumwerk Burnburg AG,Germany"
+741,"SF Co. Ltd., Korea"
+742,"Shandong weigao Group MedicalPolymer Co. Ltd., China"
+746,"Shinil Biogen & Co. Ltd., Korea"
+749,"Sino Swed PharmaceuticalCorporation Ltd., China"
+750,"Smith & Nephew Medical Ltd., UK"
+751,"Socorex Isba S .A. CH.ChampColomb 7,Switzerland"
+752,"Solvay Pharmaceuticals,Netherlands"
+753,"Special T Products Ltd., UK"
+754,"Stiefel Laboratories Ptd Ltd.,Ireland"
+755,"Stiefel Laboratories Ptd Ltd.,Singapore"
+758,"Sumitomo Pharmaceuticals Co.,Ltd., Japan"
+759,Super
+760,"Swensweg 5 Haarlem, Holland"
+761,"Takeda Pharmaceutical Companyltd., Japan"
+762,Talecris Biotherapeutics Inc. USA
+763,"Terumo Corporation, Japan"
+764,"Teva Pharmaceutical Private Ltd.,Hungary"
+765,Thai Nokorn Patana Co. Ltd.Thailand
+766,"The Dow Chemical Company,USA"
+767,"The Research Foundation forMicrobial Disease of OsakaUniversity, Japan"
+768,"TRB Chemedica International Sa,Switzerland"
+769,"Tyco Healthcare, Canada"
+770,"UCB India Ltd., India"
+771,UG Medical Disposable DNMalaysia
+772,"United Propotions Inc., USA"
+773,"Varun Medimpex,India"
+775,"Vetech Labortories Inc., Canada"
+776,"Vetoquinol SA, France"
+777,"Vifor (International) Inc.,Switzerland"
+778,"Walter Ritter GmbH, Germany"
+779,"Walter Ritter Kg, Germany"
+780,"Wyeth Canada, Canada"
+781,"Wyeth Pharma GmbH, Germany"
+783,"Y. Snore LLC 460, USA"
+784,"Zagro Singapore Pte. Ltd.,Singapore"
+785,"Zentaris GmbH, Germany"
+786,"Zhejiang Anji Sunlight MedicinalProducts Co., Ltd., China"
+787,not a pharma
+788,Janata Pharma
+789,Convatec
+790,Lundbeck/Lilac
+791,Apothecon
+792,GNC
+793,Merz Pharmaceuticals
+794,Abbott India Ltd
+795,Dr. Reddy's Laboratories ltd
+796,Adcock Ingram
+797,Meyer organics ltd
+798,POLIPHARM CO LTD
+799,E. Merck
+800,Bioderma
+801,City overseas
+802,Novo Nordisk
+803,UniDerma
+804,Nicholas
+805,Norgine
+806,Kawser Chemicals
+807,M.R Chemicals
+808,Kazi Chemicals
+809,JMI Pharma
+810,IPH
+811,Elixir
+812, Boehringer Ingelheim Pharmaceutical
+813,Astrazeneca Pharmaceutical company
+814,Modi-mundipharma
+815,"Laboratorio Varifarma, Argentina"
+816,"S.A. Alcon Couvreur.,N.V., Belgium"
+817,Allied Pharmaceuticals Ltd.
+818,Orion Infusion Ltd.
+819,Essential Drugs Company Ltd.
+820,Medihealth Pharmaceutical Limited
+821,Shire Pharmaceuticals Ltd.
+822,Faruk Pharmaceutical
+823,One Pharma Ltd.
+824,Julphar Bangladesh Ltd.
+825,Cosmic Pharma Ltd.
+826,MST Pharma and Healthcare Ltd.
+827,MedRx Life Science Ltd.

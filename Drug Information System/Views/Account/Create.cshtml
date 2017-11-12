@@ -1,0 +1,198 @@
+﻿@using Drug_Information_System.Models
+@model Drug_Information_System.Models.User
+
+@{
+    ViewBag.Title = "Create";
+    dynamic message = ViewBag.message;
+}
+
+<h3>Create Your Account</h3>
+
+
+@using (Html.BeginForm("Create", "Account", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        <hr/>
+        @Html.ValidationSummary(true)
+
+        <div style="padding-left: 200px">
+
+            @if (message != "Account Create Successfull")
+            {
+                <label style="color: red">
+                    @message
+                </label>
+            }
+            else
+            {
+                <label style="color: blue">
+                    @message
+                </label>
+            }
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, new {@class = "control-label col-md-2"})
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.Address, new { @class = "form-control", cols = 100, @rows = 5 })
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GenderId, "Gender", new {@class = "control-label col-md-2"})
+            <div class="col-md-5">
+                @Html.DropDownList("GenderId", null, "Select Gender", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.GenderId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OccupationsId, "Occupation", new {@class = "control-label col-md-2"})
+            <div class="col-md-5">
+                @Html.DropDownList("OccupationsId", null, "Select Occupations", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OccupationsId)
+            </div>
+        </div>
+
+        <div id="ProfessionArea" class="form-group" style="display:none">
+            @Html.LabelFor(model => model.ProfessionId, "Profession", new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.DropDownList("ProfessionId", null, "Select Profession", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProfessionId)
+            </div>
+        </div>
+
+        
+
+        <div id="IdAttach" class="form-group" style="display:none">
+            <hr>
+            <p>
+                <h4><strong>Upload your doctor Id here</strong></h4>
+            </p>
+            <p>
+                <strong>Any photo of your doctor id card or any document to verify that you are a doctor</strong>
+            </p>
+            <label for="file" class="control-label col-md-2">Select Your Document</label>
+
+            <div class="col-md-5">
+                <input type="file" name="file" id="file" class="form-control" required/>
+            </div>
+            
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create Account" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script type="text/javascript">
+        
+        $(function () {
+            $('#OccupationsId').change(function () {
+                $('#ProfessionArea').show();
+
+                var value = $(this).val();
+                if (value == '1') {
+                    $("#ProfessionId option[value='8']").hide();
+                    $("#ProfessionId option[value='9']").hide();
+                    $("#ProfessionId option[value='10']").hide();
+                    $("#ProfessionId option[value='11']").hide();
+
+                    $("#ProfessionId option[value='1']").show();
+                    $("#ProfessionId option[value='2']").show();
+                    $("#ProfessionId option[value='3']").show();
+                    $("#ProfessionId option[value='4']").show();
+                    $("#ProfessionId option[value='5']").show();
+                    $("#ProfessionId option[value='6']").show();
+                    $("#ProfessionId option[value='7']").show();
+
+                } else {
+                    $("#ProfessionId option[value='1']").hide();
+                    $("#ProfessionId option[value='2']").hide();
+                    $("#ProfessionId option[value='3']").hide();
+                    $("#ProfessionId option[value='4']").hide();
+                    $("#ProfessionId option[value='5']").hide();
+                    $("#ProfessionId option[value='6']").hide();
+                    $("#ProfessionId option[value='7']").hide();
+
+                    $("#ProfessionId option[value='8']").show();
+                    $("#ProfessionId option[value='9']").show();
+                    $("#ProfessionId option[value='10']").show();
+                    $("#ProfessionId option[value='11']").show();
+                }
+            });
+
+            $('#ProfessionId').change(function () {
+                var value = $(this).val();
+                if (value == '3') {
+                    $('#IdAttach').show();
+                    
+                } else {
+                    $('#IdAttach').hide();
+                }
+
+            });
+            
+        });
+
+        
+    </script>
+}
+

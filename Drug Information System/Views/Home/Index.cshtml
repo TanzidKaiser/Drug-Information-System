@@ -1,0 +1,179 @@
+﻿@using Drug_Information_System.Models
+
+@{
+
+    ViewBag.Title = "Home Page";
+    dynamic user = Session["user"] as User;
+    dynamic socialUser = Session["user"] as SocialUser;
+
+    dynamic topGeneric = ViewBag.TopGenericName;
+    dynamic topDrugs = ViewBag.TopBrandName;
+}
+
+<div style="text-align: center">
+    <h3>Welcome to Drug Information System</h3>
+</div>
+<hr>
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <fieldset class="col-lg-10">
+        <legend>Search Your Drugs Here</legend>
+
+        <div class="row">
+            <div class=" col-lg-5 col-lg-offset-3">
+
+                <div class="input-group input-group-lg">
+                    <div class="input-group-btn search-panel">
+                        <button style="height: 45px" id="searchInd" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span id="search_con">Brand Name</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#Brand_Name">Brand Name</a></li>
+                            <li><a href="#Generic_Name">Generic Name</a></li>
+                            <li><a href="#Indication_Name">Indication Name</a></li>
+                            <li><a href="#Company_Name">Company Name</a></li>
+
+
+                        </ul>
+                    </div>
+                    <input type="hidden" name="search_par" value="all" id="search_param">
+                    <input style="width: 600px" type="text" id="searchKey" class="form-control input-lg" placeholder="Enter Search Item...">
+                    <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+
+                </div>
+            </div>
+        </div>
+
+    </fieldset>	
+</div>
+    
+
+
+
+
+
+
+<hr>
+        <div class="topGeneric">
+
+
+            <table class="table">
+                <thead>
+                    <tr class="danger">
+                        <th>
+                            <h4><b>Popular Generic Name</b></h4>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in topGeneric)
+                    {
+                        <tr>
+                            <td>
+                                @Html.ActionLink((string)@item.GenericName, "DrugInfo", new { genericId = item.GenericId })
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="topDrugs">
+            <table class="table">
+                <tr class="danger">
+                    <th><h4><b>Popular Brands</b></h4></th>
+                </tr>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr class="info">
+                        <th>Brand Name</th>
+                        <th>Drug Strength</th>
+                        <th>Drug Form</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in topDrugs)
+                    {
+                        <tr>
+                            <td>@item.BrandName</td>
+                            <td>@item.DrugStrength</td>
+                            <td>@item.DrugForm</td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.BrandId, genericId = item.GenericId }, new { @class = "btn btn-info" })
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <style>
+            .topGeneric {
+                height: auto;
+                text-align: center;
+                float: right;
+                width: 40% !important;
+            }
+
+            .topDrugs {
+                float: left;
+                /*border-right: 1px solid grey;*/
+                width: 50% !important;
+            }
+
+
+
+
+            /*for fieldset*/
+
+
+            fieldset {
+                border: 4px solid cornflowerblue !important;
+                margin: 0;
+
+                width: 100% !important;
+
+                padding: 50px;
+                position: relative;
+                border-radius: 4px;
+                background-color: lightblue;
+                padding-left: 10px !important;
+            }
+
+            legend {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 0px;
+                width: 25%;
+                border: 2px solid aquamarine;
+                border-radius: 4px;
+                padding: 5px 5px 5px 10px;
+                margin-left: 100px;
+                background-color: #ffffff;
+            }
+
+
+        </style>
+
+
+
+

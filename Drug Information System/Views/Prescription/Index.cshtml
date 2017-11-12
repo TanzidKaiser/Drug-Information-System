@@ -1,0 +1,71 @@
+﻿@model Drug_Information_System.Models.DoctorPrescription
+
+@{
+    ViewBag.Title = "Index";
+    dynamic message = ViewBag.message;
+}
+
+<h2>Generate Prescription </h2>
+<hr />
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    
+    <legend>Enter Patient Information</legend>
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true)
+
+
+        <div style="padding-left: 200px">
+
+            <label style="color: red">
+                @message
+            </label>
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatientName, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PatientName, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.PatientName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GenderId, "Gender", new {@class = "control-label col-md-2"})
+            <div class="col-md-5">
+                @Html.DropDownList("GenderId", null, "Select Gender", new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.GenderId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatientAge, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PatientAge, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.PatientAge)
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+
+
+    </div>
+    
+        
+}
+
+
+
+

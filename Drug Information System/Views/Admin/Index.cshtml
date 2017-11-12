@@ -1,0 +1,167 @@
+﻿
+@model IEnumerable<Drug_Information_System.Models.User>
+
+
+@{
+    ViewBag.Title = "Doctor Verification";
+    var UnapproveUsers = ViewBag.UnApproveUsers;
+}
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+<div style="text-align:center">
+    <h2>Doctor Verification</h2>
+    <span id="spn"></span>
+    
+
+    
+    
+</div>
+
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            Name
+        </th>
+        
+        <th>
+           Address
+        </th>
+        
+        <th>
+            Email
+        </th>
+
+        <th>
+            Identity
+        </th>
+        <th>
+            Status
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in UnapproveUsers)
+{
+    
+    
+    <tr>
+        
+        <td>
+            @item.FirstName @item.LastName
+        </td>
+        @*<td>
+            @item.LastName
+        </td>*@
+        <td>
+            @item.Address
+        </td>
+
+        <td>
+            @item.Email
+        </td>
+        <td>
+            @Html.ActionLink("View Identity", "DownloadIdentity", new { userName = @item.UserName })
+        </td>
+
+        <td >
+            @{
+                var val = item.UserApproval;
+
+                if (val)
+                {
+                    <input id="@item.Id" name="apprv" type="checkbox" checked data-toggle="toggle" data-on="Enabled" data-off="Disabled">
+
+                }
+                else
+                {
+                    <input id="@item.Id" name="apprv" type="checkbox" data-toggle="toggle" data-on="Enabled" data-off="Disabled">
+
+                }
+            }
+            
+            @*@item.UserApproval*@
+            
+            
+        </td>
+
+    </tr>
+}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    
+    <script>
+
+        
+
+        $('input:checkbox').change(
+        function () {
+            var id = $(this).attr('id');
+           
+            if ($(this).is(':checked')) {
+                
+                Approve(id, true);
+
+            } else {
+                //document.getElementById('spn').innerHTML = false + " " + id + " ";
+                Approve(id, false);
+            }
+        });
+        
+
+        function Approve(id, val) {
+
+            $.ajax({
+                url: '/Admin/UpdateUserApproval',
+                data: { 'userId': id, 'value': val },
+                type: "post",
+                cache: false,
+                success: function (content) {
+                    if (content == 'Update Complete') {
+                        
+                    }
+                    else  {
+                        
+                    }
+
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    
+                }
+
+
+            });
+        }
+
+    </script>
+    
+}

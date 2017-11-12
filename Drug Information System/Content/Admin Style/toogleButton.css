@@ -1,0 +1,29 @@
+﻿label.toggle-switch {
+        display: inline-block;
+        height: 27px; width: 80px;
+        padding: 2px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #666;
+        line-height: 21px;
+        text-align: left;
+        -webkit-transition: background-color 0.5s;
+    }
+    label.toggle-switch input {
+        display: none;
+    }
+    label.toggle-switch span {
+        display: inline-block;
+        position: relative;
+        left: 0px;
+        width: 37px; height: 21px;
+        background-color: #EEE;
+        border-radius: 5px;
+        -webkit-transition: left 0.5s;
+    }
+    label.toggle-switch.on {
+        background-color: #39F;
+    }
+    label.toggle-switch.on span {
+        left: 38px;
+    }

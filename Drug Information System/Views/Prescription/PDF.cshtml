@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "GeneratePDF";
+
+    dynamic doctorName = ViewBag.DoctorName;
+    dynamic address = ViewBag.Address;
+    dynamic email = ViewBag.Email;
+
+    dynamic patientName = ViewBag.PatientName;
+    dynamic patientAge = ViewBag.PatientAge;
+    dynamic patientGender = ViewBag.PatientGender;
+    dynamic visitedDate = ViewBag.VisitedDate;
+    dynamic patientId = ViewBag.PatientId;
+
+    dynamic doctorSuggestions = ViewBag.DoctorSuggestion;
+    
+    dynamic drugs = ViewBag.Drugs;
+}
+
+<div class="patientInfo">
+    <table>
+        <tr>
+            <td class="title">Patient Name : </td>
+            <td class="text">@patientName</td>
+        </tr>
+        <tr>
+            <td class="title">Patient Age : </td>
+            <td class="text">@patientAge</td>
+        </tr>
+        <tr>
+            <td class="title">Gender : </td>
+            <td class="text">@patientGender</td>
+        </tr>
+        <tr>
+            <td class="title">Date : </td>
+            <td class="text">@visitedDate</td>
+        </tr>
+    </table>
+</div>
+
+<div class="doctorInfo">
+    <table>
+        <tr>
+            <td class="title">Doctor Name : </td>
+            <td class="text">@doctorName</td>
+        </tr>
+        <tr>
+            <td class="title">Address : </td>
+            <td class="text">@address</td>
+        </tr>
+        <tr>
+            <td class="title">Email : </td>
+            <td class="text">@email</td>
+        </tr>
+        <tr>
+            <td class="title">PID : </td>
+            <td class="text">@patientId</td>
+        </tr>
+    </table>
+
+</div>
+
+<div style="clear: both; text-align: center">
+    <hr>
+    
+    <table id="myTable" class="table" style="width: 100%">
+        <tr class="info">
+            <th>Drugs Name</th>
+            <th>Dosage Form</th>
+            <th>Dosage Duration</th>
+            <th>Extra Note</th>
+        </tr>
+
+        @foreach (var item in drugs)
+        {
+            <tr class="danger">
+                <td>@item.DrugName </td>
+                <td> @item.DosageForm</td>
+                <td>@item.DosageDuration</td>
+                <td> @item.ExtraNote</td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<div style="clear: both; text-align: center">
+    <div style="background-color: lightskyblue">
+        <label style="font-size: 18px">
+            <strong style="">Doctor Suggestions</strong>
+        </label>
+    </div>
+    <div style="background-color: aliceblue">
+        <label style="font-size: 18px; width: auto">
+            @doctorSuggestions
+        </label>
+    </div>
+
+    
+</div>
+
+
+
+<style>
+
+    table tr .title {
+        text-align: right;
+        background: #5f9be3;
+        color: #fff;
+        font-weight: bold;
+        padding: 5px;
+        width: auto;
+    }
+
+    table tr .text {
+        padding-left: 10px;
+    }
+
+
+    .patientInfo {
+        height: auto;
+        text-align: center;
+        float: right;
+        border-left: 1px solid grey;
+        width: 50% !important;
+    }
+
+    .doctorInfo {
+        float: left;
+        width: 50% !important;
+    }
+</style>

@@ -1,0 +1,90 @@
+﻿@model Drug_Information_System.Models.DrugBrandInfo
+
+@{
+    ViewBag.Title = "SearchResult";
+    
+    dynamic SearchKeyWord = ViewBag.SearchKeyWord;
+    
+}
+
+<h3>Showing Result For : <strong>@SearchKeyWord</strong></h3>
+<hr>
+
+
+
+<input type="text" id="value">
+
+<hr>
+
+
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>Brand Name </th>
+            <th>Drug Form</th>
+            <th>Pack Size</th>
+            <th>Price (TK)</th>
+            <th></th>
+        </tr>
+    </thead>
+
+
+</table>
+
+
+
+
+
+@section Scripts {
+   
+    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script>
+        
+        //var table = $('#myTable').DataTable();
+
+        //// #myInput is a <input type="text"> element
+        //$('#val').on('keyup', function () {
+        //    table.search(this.value).draw();
+        //});
+
+
+        $(document)
+            .ready(function () {
+                var table = $("#myTable")
+                    .DataTable({
+                        "processing": true,
+                        "serverSide": true,
+                        "filter": true,
+                        "orderMulti": false,
+                        "ajax": {
+                            "url": "/BrandInfo/LoadData",
+                            "type": "POST",
+                            "datatype": "json"
+                        },
+
+                        "columns": [
+                            { "data": "BrandName", "name": "BrandName" },
+                            { "data": "DrugForm", "name": "DrugForm" },
+                            { "data": "PackSize", "name": "PackSize" },
+                            { "data": "Price", "name": "Price" },
+                            {
+                                "mDataProp": function (source, type, val) {
+                                    return '<a href=/BrandInfo/Details/' + source.Id + '?genericId=' + source.GenericId + '>Details</a>';
+
+                                }, "bSortable": false
+                            }
+                        ]
+                    });
+                $('#value')
+                    .on('keyup',
+                        function() {
+                            table.search(this.value).draw();
+                        });
+
+            });
+    </script>
+
+
+
+}

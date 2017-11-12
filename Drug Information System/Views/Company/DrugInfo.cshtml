@@ -1,0 +1,97 @@
+﻿@model Drug_Information_System.Models.DrugBrandInfo
+
+@{
+    ViewBag.Title = "DrugInfo";
+    dynamic pharmaName = ViewBag.PharmaName;
+    dynamic BrandInfos = ViewBag.BrandInfos;
+}
+
+<h2>Company Name : @pharmaName</h2>
+<hr>
+
+
+<table id="myTable" class="table">
+    <thead>
+        <tr class="info">
+            <th>
+                @Html.DisplayNameFor(model => model.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PharmaCompany.PharmaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrugForm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrugStrength)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr class="danger">
+            <th>
+                @Html.DisplayNameFor(model => model.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PharmaCompany.PharmaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrugForm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrugStrength)
+            </th>
+
+            <th></th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in BrandInfos)
+        {
+            <tr>
+
+                <td>
+                    @item.BrandName
+                </td>
+                <td>
+                    @item.PharmaCompany.PharmaName
+                </td>
+                <td>
+                    @item.DrugForm
+                </td>
+                <td>
+                    @item.DrugStrength
+                </td>
+                <td>
+
+                    @Html.ActionLink("Details", "Details", new { id = item.Id, genericId = item.GenericId }, new { @class = "btn btn-info" })
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document)
+            .ready(function () {
+                $('#myTable').DataTable({ responsive: true });
+
+            });
+
+    </script>
+
+}

@@ -1,0 +1,476 @@
+﻿@using System.Globalization
+@using System.Web.Mvc.Html
+@using Drug_Information_System.Models
+@model Drug_Information_System.Models.DrugBrandInfo
+
+
+@{
+    ViewBag.Title = "Details";
+    
+    dynamic user = Session["user"] as User;
+    dynamic socialUser = Session["user"] as SocialUser;
+
+    dynamic userRating = ViewBag.UserRating;
+    dynamic professionalRating = ViewBag.ProfessionalRating;
+    dynamic yourRating = @ViewBag.YourRating;
+
+    dynamic RelatedDrugs = ViewBag.RelatedDrugs;
+    
+    dynamic TherapiticNames = ViewBag.TherapiticNames;
+    dynamic IndicationNames = ViewBag.IndicationNames;
+    dynamic PharmaName = ViewBag.PharmaName;
+
+    dynamic GenericInfo = ViewBag.GenericInfo;
+    dynamic PregnancyInfo = ViewBag.PregnancyInfo;
+
+    dynamic AssociateDrug = ViewBag.AssociatedDrugs;
+    dynamic AssociatedDrugsCount = ViewBag.AssociatedDrugsCount;
+    
+    
+    
+
+}
+
+<label id="drugId" hidden>@Html.DisplayFor(model => model.Id)</label>
+<h2>Drug Details</h2>
+
+<div class="related-drugs">
+    <h4>Related Drugs</h4>
+
+    <table class="table">
+        <tr class="info">
+            <th>@Html.DisplayNameFor(model => model.BrandName) </th>
+            <th>@Html.DisplayNameFor(model => model.DrugStrength)</th>
+            <th>@Html.DisplayNameFor(model => model.DrugForm)</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in RelatedDrugs)
+        {
+
+            <tr>
+                <td>
+                    @item.BrandName
+                </td>
+                <td>
+                    @item.DrugStrength
+                </td>
+                <td>
+                    @item.DrugForm
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new {id = item.Id, genericId = item.GenericId}, new {@class = "btn btn-info"})
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+    <hr>
+
+    @if (AssociatedDrugsCount > 0)
+    {
+        <h4>Peoples Who Search This Item Also Search</h4>
+        <table class="table">
+        <tr class="info">
+            <th>@Html.DisplayNameFor(model => model.BrandName) </th>
+            <th>@Html.DisplayNameFor(model => model.DrugStrength)</th>
+            <th>@Html.DisplayNameFor(model => model.DrugForm)</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in AssociateDrug)
+        {
+
+            <tr>
+                <td>
+                    @item.BrandName
+                </td>
+                <td>
+                    @item.DrugStrength
+                </td>
+                <td>
+                    @item.DrugForm
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new {id = item.Id, genericId = item.GenericId}, new {@class = "btn btn-info"})
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    }
+
+</div>
+
+<div class="details-drug">
+
+<div style="float: right; width: 35%">
+    
+    <div >
+        <label for="Professional_Rating" class="control-label">Professional Rating</label>
+        <input id="Professional_Rating" name="Professional_Rating" class="rating-loading" value="@professionalRating" data-min="0" data-max="5" data-step="0.5" data-size="xs" data-disabled="true">
+        <hr>
+        <label for="User_Rating" class="control-label">User Rating</label>
+        <input id="User_Rating" name="User_Rating" class="rating-loading" value="@userRating" data-min="0" data-max="5" data-step="0.5" data-size="xs" data-disabled="true">
+        <hr>
+        @if (user != null || socialUser != null)
+        {
+            <label for="Your_Rating" class="control-label">Your Rating</label>
+            <input id="Your_Rating" name="Your_Rating" class="rating-loading" value="@yourRating" onchange="addRating(this)" data-min="0" data-max="5" data-step="1" data-size="xs">
+        }
+        
+    </div>
+    
+</div>
+
+    
+
+
+<div style="float: left; width: 65%">
+    <dl class="dl-horizontal">
+
+        <h3>
+            <dt>
+                @Html.Label("Brand Name")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BrandName)
+            </dd>
+
+            @*<dd>
+                <img src=@Url.Content("~/Image/Drug_Image/" + @Model.Id + ".jpg") alt="image" style="height: 200px; width: 200px;"/>
+            </dd>*@
+        </h3>
+
+        <dt>
+            @Html.Label("Drug Strength")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DrugStrength)
+        </dd>
+
+        <dt>
+            @Html.Label("Drug Form")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DrugForm)
+        </dd>
+
+        <dt>
+            @Html.Label("Generic Name")
+        </dt>
+        <dd>
+            @GenericInfo.GenericName
+        </dd>
+
+        <dt>
+            @Html.Label("Pharma Name")
+        </dt>
+        <dd>
+            @PharmaName
+        </dd>
+
+        <dt>
+            @Html.Label("Therapeutic Class")
+        </dt>
+        <dd>
+            @TherapiticNames
+        </dd>
+
+        <dt>
+            @Html.Label("Pack Size")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PackSize)
+        </dd>
+
+        <dt>
+            @Html.Label("Price")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price) TK
+        </dd>
+
+    </dl>
+
+</div>
+
+
+
+    <div style="clear: both">
+
+        <div class="fancy-collapse-panel">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            Indications
+                        </h4>
+                    </div>
+                    <div id="collapseOne"  role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            @IndicationNames
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            Contraindication
+                        </h4>
+                    </div>
+                    <div id="collapseTwo"  role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            @Html.DisplayFor(model => model.DrugGeneric.Contraindication)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            Side Effects
+                        </h4>
+                    </div>
+                    <div id="collapseThree"  role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            @GenericInfo.SideEffect
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            Dosage Form
+                        </h4>
+                    </div>
+                    <div id="collapseFour"  role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            @GenericInfo.DosageForm
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            Warning And Precaution
+                        </h4>
+                    </div>
+                    <div id="collapseFive"  role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            @GenericInfo.WarningAndPrecaution
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSix">
+                        <h4 class="panel-title">
+                            Interaction
+                        </h4>
+                    </div>
+                    <div id="collapseSix"  role="tabpanel" aria-labelledby="headingSix">
+                        <div class="panel-body">
+                            @GenericInfo.Interaction
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingSeven">
+                        <h4 class="panel-title">
+                            Mode Of Action
+                        </h4>
+                    </div>
+                    <div id="collapseSeven"  role="tabpanel" aria-labelledby="headingSeven">
+                        <div class="panel-body">
+                            @GenericInfo.ModeOfAction
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingEight">
+                        <h4 class="panel-title">
+                            Pregnancy Category
+                        </h4>
+                    </div>
+                    <div id="collapseEight"  role="tabpanel" aria-labelledby="headingEight">
+                        <div class="panel-body">
+                            Pregnancy Category - @PregnancyInfo.PregnancyName <br> @PregnancyInfo.PregnancyDiscription
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<style>
+    dt {
+        font-weight: bold;
+        text-decoration: underline;
+        font-weight: bold;
+        color: green;
+    }
+
+    dd {
+        margin: 0;
+        padding: 0 0 0.5em 0;
+    }
+
+    .related-drugs {
+        height: auto;
+
+        text-align: center;
+        float: right;
+        width: 30% !important
+    }
+
+    .details-drug {
+
+        float: left;
+        border-right: 1px solid grey;
+        width: 69% !important
+    }
+
+
+
+
+
+    
+
+    .fancy-collapse-panel .panel-heading {
+        padding: 12px 35px 12px 15px;
+        display: inline-block;
+        width: 100%;
+        background-color: #1e90ff;
+        color: #ffffff;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .fancy-collapse-panel .panel-heading a:after {
+        font-family: "FontAwesome";
+        content: "\f147";
+        position: absolute;
+        right: 20px;
+        font-size: 25px;
+        font-weight: 400;
+        top: 50%;
+        line-height: 1;
+        margin-top: -10px;
+    }
+
+    .fancy-collapse-panel .panel-heading a.collapsed:after {
+        content: "\f196";
+    }
+
+
+</style>
+
+<link href="~/Content/Rating/star-rating.css" rel="stylesheet" />
+<link href="~/Content/Rating/theme.css" rel="stylesheet" />
+
+
+
+@section Scripts {
+<script src="~/Content/Rating/star-rating.js"></script>
+<script src="~/Content/Rating/theme.js"></script>
+<script>
+    $(document).on('ready', function () {
+        $('#Professional_Rating').rating({
+            hoverEnabled: false
+        });
+    });
+
+    $(document).on('ready', function () {
+        $('#User_Rating').rating({
+            hoverEnabled: false
+        });
+    });
+
+    $(document).on('ready', function () {
+        $('#Your_Rating').rating({
+            hoverEnabled: false
+        });
+    });
+
+
+    function addRating(text) {
+        
+        var drigId = document.getElementById('drugId');
+        $.ajax({
+
+            url: '/BrandInfo/SaveRating',
+            data: { 'rating': text.value, 'drugId': drigId.innerHTML },
+            type: "post",
+            cache: false,
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Error !! Please try again');
+            }
+
+        });
+
+        $.ajax({
+
+            url: '/BrandInfo/ProfessionalRating',
+            data: { 'drugId': drigId.innerHTML },
+            type: "post",
+            cache: false,
+            success: function (content) {
+                if (content != "") {
+                    $("#Professional_Rating").rating("refresh");
+                    $("#Professional_Rating").rating("update", content);
+                    
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Error !! Please try again');
+            }
+
+        });
+
+        $.ajax({
+
+            url: '/BrandInfo/UserRating',
+            data: { 'drugId': drigId.innerHTML },
+            type: "post",
+            cache: false,
+            success: function (content) {
+                if (content != "") {
+                    $("#User_Rating").rating("refresh");
+                    $("#User_Rating").rating("update", content);
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Error !! Please try again');
+            }
+
+        });
+
+        
+
+    }
+
+</script>
+   
+}

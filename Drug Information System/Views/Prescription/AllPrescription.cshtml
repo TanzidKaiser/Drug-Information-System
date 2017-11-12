@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "AllPrescription";
+    dynamic prescription = ViewBag.doctorPrescription;
+}
+
+<h2>Prescription Information</h2>
+<hr>
+
+<table id="myTable" class="table">
+    <thead>
+        <tr class="info">
+            <th>PID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Visited Date</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr class="danger">
+            <th>PID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Visited Date</th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in prescription)
+        {
+            <tr>
+                <td>@item.PatientId</td>
+                <td>@item.PatientName</td>
+                <td>@item.PatientAge</td>
+                @if (item.GenderId == 1)
+                {
+                    <td>Male</td>
+                }
+                else
+                {
+                    <td>Female</td>
+                }
+
+                <td>@item.VisitedDate</td>
+                <td>
+                    @Html.ActionLink("Generate Report", "PDF", new { prescriptionId = item.Id }, new { @class = "btn btn-success" })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document)
+            .ready(function () {
+                $('#myTable').DataTable({ responsive: true });
+
+            });
+
+    </script>
+
+}
+
+

@@ -1,0 +1,1626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68C58B70-F025-4009-BD95-A0FA65D4D704}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Drug_Information_System</RootNamespace>
+    <AssemblyName>Drug Information System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTables.Mvc">
+      <HintPath>..\packages\datatables.mvc5.0.1.0\lib\net45\DataTables.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection">
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.46.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\ikvm-7.2.4630.5\bin\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.10\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RazorPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RazorPDF2.2.0.0\lib\net40\RazorPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorPDF.Legacy">
+      <HintPath>..\packages\RazorPDF2.2.0.0\lib\net40\RazorPDF.Legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa">
+      <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="weka, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Weka-3-8\weka.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes For Use\DrugInformation.cs" />
+    <Compile Include="Context\DrugInformationContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BrandInfoController.cs" />
+    <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Classes For Use\DrugRecommendation.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CSVController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\GenericController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndicationController.cs" />
+    <Compile Include="Controllers\ManifoldController.cs" />
+    <Compile Include="Controllers\PrescriptionController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Classes For Use\Activity.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612161349218_version1.cs" />
+    <Compile Include="Migrations\201612161349218_version1.Designer.cs">
+      <DependentUpon>201612161349218_version1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612161659580_version2.cs" />
+    <Compile Include="Migrations\201612161659580_version2.Designer.cs">
+      <DependentUpon>201612161659580_version2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612251911189_version3.cs" />
+    <Compile Include="Migrations\201612251911189_version3.Designer.cs">
+      <DependentUpon>201612251911189_version3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612281713412_version4.cs" />
+    <Compile Include="Migrations\201612281713412_version4.Designer.cs">
+      <DependentUpon>201612281713412_version4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612281749323_version5.cs" />
+    <Compile Include="Migrations\201612281749323_version5.Designer.cs">
+      <DependentUpon>201612281749323_version5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311016428_version6.cs" />
+    <Compile Include="Migrations\201705311016428_version6.Designer.cs">
+      <DependentUpon>201705311016428_version6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\DoctorPrescription.cs" />
+    <Compile Include="Models\DrugBrandInfo.cs" />
+    <Compile Include="Models\DrugGeneric.cs" />
+    <Compile Include="Models\DrugsRating.cs" />
+    <Compile Include="Models\DrugStatus.cs" />
+    <Compile Include="Models\DrugSystemicClass.cs" />
+    <Compile Include="Models\DrugTherapiticClass.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\HospitalsAndClinics.cs" />
+    <Compile Include="Models\Indication.cs" />
+    <Compile Include="Models\IndicationGenericRelation.cs" />
+    <Compile Include="Models\MessageInfo.cs" />
+    <Compile Include="Models\Occupation.cs" />
+    <Compile Include="Models\PharmaCompany.cs" />
+    <Compile Include="Models\PharmaInformation.cs" />
+    <Compile Include="Models\PregnancyCategory.cs" />
+    <Compile Include="Models\PrescribedDrugs.cs" />
+    <Compile Include="Models\Profession.cs" />
+    <Compile Include="Models\SocialUser.cs" />
+    <Compile Include="Models\TherapiticGenericRelation.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserActivity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Admin Style\toggleSwitch.js" />
+    <Content Include="Content\Admin Style\toogleButton.css" />
+    <Content Include="Content\assets\css\bootstrap.css" />
+    <Content Include="Content\assets\css\docs.css" />
+    <Content Include="Content\assets\css\font-awesome.css" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\assets\img\bootstrap-social.png" />
+    <Content Include="Content\assets\js\docs.js" />
+    <Content Include="Content\assets\js\jquery.js" />
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\css\docs.css" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\css\font-awesome.css" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\img\bootstrap-social.png" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\js\docs.js" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\js\jquery.js" />
+    <Content Include="Content\bootstrap-social-gh-pages\bootstrap-social.css" />
+    <Content Include="Content\bootstrap-social.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\contactform\readme.txt" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\style.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\about-img.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\client-1.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\client-2.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\hero-bg.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\logo.png" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-1.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-2.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-3.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-4.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-5.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-6.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-7.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\portfolio-8.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\preloader.svg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\quote_sign_left.png" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\quote_sign_right.png" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\services-bg.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\subscribe-bg.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\team-1.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\team-2.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\team-3.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\img\team-4.jpg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\index.html" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\js\custom.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\animate-css\animate.min.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\js\npm.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\easing\easing.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\easing\easing.min.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\jquery\jquery.min.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\morphext\morphext.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\morphext\morphext.min.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\stickyjs\sticky.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\superfish\hoverIntent.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\superfish\superfish.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\superfish\superfish.min.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\wow\wow.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\wow\wow.min.js" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\Readme.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\404.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\.gitignore" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\Chart.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\Chart.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\docs\Chart.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\docs\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\docs\prettify.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\docs\prettify.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\docs\styles.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\samples\bar.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\samples\doughnut.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\samples\line.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\samples\pie.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\samples\polarArea.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\samples\radar.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\samples\sixup.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\assets\6charts.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\assets\Chart.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\assets\effects.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\assets\excanvas.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\assets\html.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\assets\simple.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\site\styles.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\build-config.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\ckeditor.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\config.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\contents.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\af.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ar.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\bg.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\bn.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\bs.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ca.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\cs.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\cy.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\da.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\de.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\el.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\en-au.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\en-ca.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\en-gb.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\en.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\eo.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\es.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\et.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\eu.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\fa.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\fi.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\fo.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\fr-ca.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\fr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\gl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\gu.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\he.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\hi.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\hr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\hu.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\is.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\it.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ja.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ka.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\km.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ko.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ku.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\lt.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\lv.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\mk.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\mn.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ms.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\nb.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\nl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\no.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\pl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\pt-br.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\pt.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ro.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ru.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\sk.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\sl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\sr-latn.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\sr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\sv.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\th.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\tr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\ug.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\uk.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\vi.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\zh-cn.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\lang\zh.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\icons.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\ajax.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\api.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\appendto.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\assets\sample.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\divreplace.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\inlineall.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\readonly.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\replacebycode.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\sample.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\sample.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\tabindex.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\uicolor.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\uilanguages.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\editor.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\icons.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\styles.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\changelog.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\agenda-views.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\basic-views.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\cupertino\theme.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\default.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\external-dragging.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\gcal.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\json.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\selectable.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\theme.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\fullcalendar\gcal.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\GPL-LICENSE.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\jquery\jquery-1.8.1.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\jquery\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\MIT-LICENSE.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\examples\excanvas.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\examples\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\examples\style.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\img\easy-pie-chart.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\.gitignore" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\cors\postmessage.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\cors\result.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\css\style.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\img\loading.gif" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\jquery.fileupload-fp.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\main.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-go\static\favicon.ico" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-go\static\robots.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-python\main.py" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-python\static\favicon.ico" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-python\static\robots.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\node\.gitignore" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\node\public\files\thumbnail\.gitignore" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\node\server.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\node\tmp\.gitignore" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\php\files\style-responsive.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\test\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\test\test.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-knob\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-knob\js\jquery.knob.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\jquery-ui-1.10.1.custom.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-ui\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\.gitignore" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\area-as-line.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\area.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\bar-colors.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\bar-no-axes.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\bar.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\days.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\decimal-custom-hover.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\diagonal-xlabels-bar.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\diagonal-xlabels.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\donut-colors.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\donut-formatter.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\donut.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\dst.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\events.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\goals.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\lib\example.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\lib\example.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\lib\prettify.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\lib\prettify.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\months-no-smooth.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\negative.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\no-grid.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\non-continuous.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\non-date.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\quarters.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\stacked_bars.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\timestamps.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\updating.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\weeks.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\years.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\examples\_template.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\grunt.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\morris.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\morris.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\morris.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\raphael-min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\specs.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\chai-1.3.0.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\chai-jquery-1.1.0.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\jquery-1.8.2.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\mocha-1.6.0.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\mocha-1.6.0.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\raphael-2.1.0.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\sinon-1.5.0.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\vendor\sinon-chai-2.1.2.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\basic_table.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\blank.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\buttons.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\chart-chartjs.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\bootstrap-theme.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\bootstrap.min.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\elegant-icons-style.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\font-awesome.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\font-awesome.min.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\fullcalendar.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\jquery-ui-1.10.4.min.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\line-icons.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\owl.carousel.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\style-responsive.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\style.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\widgets.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\css\xcharts.min.css" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\ElegantIcons.svg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\form_component.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\form_validation.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\general.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\grids.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\arrow-up.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\avatar-mini.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\avatar-mini2.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\avatar-mini3.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\avatar-mini4.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\avatar1.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\avatar1_small.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\bg-1.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\chart-texture.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\chat-avatar.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\chat-avatar2.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\customSelect-arrow.gif" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\geekslabs.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\Germany.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\icons\line-icon-c.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\icons\line-icon-hover.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\icons\line-icon.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\icons\search-line-icon.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\icons\social.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\icons\weather-hover.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\icons\weather.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\India.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\left-arrow.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\logo-big.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\mail-avatar.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\profile-avatar.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\profile-widget-avatar.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\right-arrow.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\Russia.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\sample-img-1.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\sample-img-2.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\sample-img-3.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\search-icon.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\Spain.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\user.jpg" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\img\user22.png" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\index.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\index1.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\additional-methods.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\bootstrap-switch.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\bootstrap-wysiwyg-custom.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\bootstrap-wysiwyg.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\bootstrap.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\bootstrap.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\calendar-custom.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\chartjs-custom.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\charts-flot.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\charts-other.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\charts-xcharts.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\charts.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\dynamic-table.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\easy-pie-chart.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\excanvas.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\form-component.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\form-validation-script.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\fullcalendar.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\fullcalendar.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\ga.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\gdp-data.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\gritter.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\html5shiv.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\index.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.autosize.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.customSelect.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.flot.pie.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.hotkeys.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.localscroll.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.nicescroll.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.placeholder.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.rateit.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.scrollTo.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.slimscroll.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.smartWizard.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.sparkline-11.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.sparkline.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.stepy.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.tagsinput.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\jquery.validate.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\lte-ie7.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\morris-script.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\morris.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\owl.carousel.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\scripts.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\sliders.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\sparkline-chart.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\sparklines.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\js\xcharts.min.js" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\login.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\profile.html" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\readme.txt" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\widgets.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-social.css" />
+    <Content Include="Content\dataTables.bootstrap.min.css" />
+    <Content Include="Content\dataTables.jqueryui.min.css" />
+    <Content Include="Content\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\generic.css" />
+    <Content Include="Content\Image\drug.png" />
+    <Content Include="Content\Image\favicon2.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.structure.min.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
+    <Content Include="Content\jquery-ui.theme.min.css" />
+    <Content Include="Content\material.min.css" />
+    <Content Include="Content\Rating\star-rating.css" />
+    <Content Include="Content\Rating\star-rating.js" />
+    <Content Include="Content\Rating\theme.css" />
+    <Content Include="Content\Rating\theme.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\stylesheets\wickedpicker.css" />
+    <Content Include="Content\themes\1\bullet.png" />
+    <Content Include="Content\themes\1\js-image-slider.css" />
+    <Content Include="Content\themes\1\js-image-slider.js" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Image\Drug_Image\11.jpg" />
+    <Content Include="Image\Drug_Image\12.jpg" />
+    <Content Include="Image\Drug_Image\13.jpg" />
+    <Content Include="Image\Drug_Image\14.jpg" />
+    <Content Include="Image\Drug_Image\15.jpg" />
+    <Content Include="Image\Drug_Image\16.jpg" />
+    <Content Include="Image\Drug_Image\17.jpg" />
+    <Content Include="Image\Drug_Image\18.jpg" />
+    <Content Include="Image\Drug_Image\19.jpg" />
+    <Content Include="Image\Drug_Image\20.jpg" />
+    <Content Include="Image\Drug_Image\21.jpg" />
+    <Content Include="Content\bootstrap-datepicker.css.map" />
+    <Content Include="Content\bootstrap-datepicker.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\LESS\badgets_labels.less" />
+    <Content Include="Content\LESS\base.less" />
+    <Content Include="Content\LESS\buttons.less" />
+    <Content Include="Content\LESS\chat.less" />
+    <Content Include="Content\LESS\custom.less" />
+    <Content Include="Content\LESS\elements.less" />
+    <Content Include="Content\LESS\media.less" />
+    <Content Include="Content\LESS\mixins.less" />
+    <Content Include="Content\LESS\navigation.less" />
+    <Content Include="Content\LESS\pages.less" />
+    <Content Include="Content\LESS\rtl.less" />
+    <Content Include="Content\LESS\sidebar.less" />
+    <Content Include="Content\LESS\skins.less" />
+    <Content Include="Content\LESS\spinners.less" />
+    <Content Include="Content\LESS\style.less" />
+    <Content Include="Content\LESS\theme-config.less" />
+    <Content Include="Content\LESS\top_navigation.less" />
+    <Content Include="Content\LESS\typography.less" />
+    <Content Include="Content\LESS\variables.less" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <EmbeddedResource Include="Domain\SeedData\PharmaCompanies.csv" />
+    <EmbeddedResource Include="Migrations\201612161349218_version1.resx">
+      <DependentUpon>201612161349218_version1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612161659580_version2.resx">
+      <DependentUpon>201612161659580_version2.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\LESS\bootstrap-social.less" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\bootstrap-social-gh-pages\.editorconfig" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\bootstrap-social-gh-pages\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\bootstrap-social-gh-pages\bootstrap-social.less" />
+    <Content Include="Content\bootstrap-social-gh-pages\bootstrap-social.scss" />
+    <EmbeddedResource Include="Migrations\201612251911189_version3.resx">
+      <DependentUpon>201612251911189_version3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612281713412_version4.resx">
+      <DependentUpon>201612281713412_version4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612281749323_version5.resx">
+      <DependentUpon>201612281749323_version5.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="App_Browsers\qt.browser" />
+    <Content Include="Image\activityARFF.arff" />
+    <EmbeddedResource Include="Migrations\201705311016428_version6.resx">
+      <DependentUpon>201705311016428_version6.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\style.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\_footer.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\_general.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\_header.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\_hero.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\_nav.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\_sections.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\css\_variables.scss" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Bootstrap-Themes\Imperial\prepros-6.config" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\component.json" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\docs\prettify.less" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\docs\styles.less" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\LICENSE.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\chart-master\readme.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\CHANGES.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\LICENSE.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\README.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\ckeditor\skins\moono\readme.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\fullcalendar\demos\json-events.php" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\jquery.easy-pie-chart.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\Makefile" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-easy-pie-chart\Readme.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\blueimp-file-upload.jquery.json" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\CONTRIBUTING.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\package.json" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\README.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-go\app.yaml" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-go\app\main.go" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\gae-python\app.yaml" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\node\package.json" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\php\files\.htaccess" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\php\files\gr.php" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\php\index.php" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\php\UploadHandler.php" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-knob\README.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\.travis.yml" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\component.json" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\less\morris.core.less" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\lib\morris.area.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\lib\morris.bar.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\lib\morris.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\lib\morris.donut.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\lib\morris.grid.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\lib\morris.hover.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\lib\morris.line.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\package.json" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\README.md" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\area\area_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\bar\bar_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\bar\colours.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\commas_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\donut\donut_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\grid\auto_grid_lines_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\grid\set_data_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\grid\y_label_format_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\hover_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\label_series_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\line\line_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\pad_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\lib\parse_time_spec.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\assets\morris.js-0.4.3\spec\support\placeholder.coffee" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\ElegantIcons.eot" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\ElegantIcons.ttf" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\ElegantIcons.woff" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\FontAwesome.otf" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Bootstrap-Themes\NiceAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\DrugInformation.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Generic\Index.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Indication\Index.cshtml" />
+    <Content Include="Views\BrandInfo\Index.cshtml" />
+    <Content Include="Views\Company\CompanyDetails.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Generic\DrugInfo.cshtml" />
+    <Content Include="Views\Company\DrugInfo.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\BrandInfo\Details.cshtml" />
+    <Content Include="Views\Indication\GenericData.cshtml" />
+    <Content Include="Views\Indication\DrugInfo.cshtml" />
+    <Content Include="Views\Class\ChildClass.cshtml" />
+    <Content Include="Views\Class\DrugInfo.cshtml" />
+    <Content Include="Views\Class\GenericData.cshtml" />
+    <Content Include="Views\Class\Indexs.cshtml" />
+    <Content Include="Views\Class\SubClass.cshtml" />
+    <Content Include="Views\CSV\Index.cshtml" />
+    <Content Include="Views\Manifold\CompaniesInformation.cshtml" />
+    <Content Include="Views\Manifold\HospitalsAndClinicsInfo.cshtml" />
+    <Content Include="Views\Prescription\Index.cshtml" />
+    <Content Include="Views\Prescription\AddDrugs.cshtml" />
+    <Content Include="Views\Prescription\PDF.cshtml" />
+    <Content Include="Views\Prescription\AllPrescription.cshtml" />
+    <Content Include="Views\Home\DrugInfo.cshtml" />
+    <Content Include="Views\BrandInfo\DrugReportDetails.cshtml" />
+    <Content Include="Views\Class\Details.cshtml" />
+    <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Generic\Details.cshtml" />
+    <Content Include="Views\Indication\Details.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutImperial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\DoctorIdentity\" />
+    <Folder Include="Content\Bootstrap-Themes\NiceAdmin\assets\jquery-file-upload\server\php\files\thumbnail\" />
+    <Folder Include="Content\themes\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>33887</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:33887/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

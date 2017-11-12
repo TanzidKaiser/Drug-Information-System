@@ -1,0 +1,65 @@
+﻿@model Drug_Information_System.Models.PharmaInformation
+
+@{
+    ViewBag.Title = "Index";
+    dynamic pharmaInfo = ViewBag.PharmaInfo;
+}
+
+<h2>Pharmaceutical Companies Information</h2>
+<hr>
+
+<table id="myTable" class="table">
+    <thead>
+        <tr class="info">
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr class="danger">
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in pharmaInfo)
+        {
+            <tr>
+
+                <td>
+                    <b>@item.Name</b>
+                </td>
+                <td>
+                    @item.Address
+                </td>
+
+                <td>
+                    @item.Phone
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document)
+            .ready(function () {
+                $('#myTable').DataTable({ responsive: true });
+
+            });
+
+    </script>
+
+}

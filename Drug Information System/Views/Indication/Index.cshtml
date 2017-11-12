@@ -1,0 +1,105 @@
+﻿@model Drug_Information_System.Models.Indication
+
+@{
+    ViewBag.Title = "Index";
+    dynamic topIndication = ViewBag.TopIndicationName;
+}
+
+<h2>All Indication Names</h2>
+<hr>
+
+
+
+
+
+
+<div class="topIndication">
+    <table class="table">
+        <thead>
+            <tr class="danger">
+                <th>
+                    <h4><b>Top Indication Search</b></h4>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in topIndication)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink((string)@item.IndicationName.ToString(), "GenericData", new { indicationId = item.IndicationId })
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
+<div class="allIndication">
+    <table id="myTable" class="table">
+        <thead>
+            <tr class="info">
+                <th>Indication Name</th>
+                <th></th>
+            </tr>
+        </thead>
+
+
+    </table>
+</div>
+
+<style>
+    .topIndication {
+        height: auto;
+        text-align: center;
+        float: right;
+        width: 30% !important;
+    }
+
+    .allIndication {
+        float: left;
+        border-right: 1px solid grey;
+        width: 65% !important;
+    }
+</style>
+
+
+@section Scripts {
+   <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document)
+        .ready(function () {
+            $("#myTable")
+                .DataTable({
+                    "processing": true,
+                    "serverSide": true,
+                    "filter": true,
+                    "orderMulti": false,
+                    "ajax": {
+                        "url": "/Indication/LoadDataForIndication",
+                        "type": "POST",
+                        "datatype": "json"
+                    },
+
+                    "columns": [
+                        
+                        {
+                            "mDataProp": function (source, type, val) {
+                                return '<a href=/Indication/GenericData?indicationId=' + source.Id + '>' + source.IndicationName + '</a>';
+
+                            }, "bSortable": true
+                        }
+
+
+                    ]
+                });
+        });
+</script>
+
+
+}

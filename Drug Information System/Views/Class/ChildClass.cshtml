@@ -1,0 +1,66 @@
+﻿@model Drug_Information_System.Models.DrugSystemicClass
+
+@{
+    ViewBag.Title = "Index";
+    dynamic AllclassNames = ViewBag.SystemiticClassNames;
+
+    dynamic ClassName = ViewBag.ClassName;
+}
+
+<h2>Class of @ClassName</h2>
+<hr>
+
+
+
+<table id="myTable" class="table">
+    <thead>
+        <tr class="info">
+            <th>
+                Class Names
+            </th>
+            <th> </th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        <tr class="danger">
+            <th>
+                Class Names
+            </th>
+            <th> </th>
+        </tr>
+    </tfoot>
+
+    <tbody>
+        @foreach (var item in AllclassNames)
+        {
+            <tr>
+
+                <td>
+                    @Html.ActionLink((string)@item.SystemicClassName.ToString(), "SubClass", new { classId = item.Id })
+                </td>
+                <td> </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document)
+            .ready(function () {
+                $('#myTable').DataTable({ responsive: true });
+
+            });
+
+    </script>
+
+}
