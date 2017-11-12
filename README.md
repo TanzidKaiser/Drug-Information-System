@@ -1,1 +1,1 @@
-# Drug-Information-System
+This project is simply provide current, accurate and helpful information about drugs available in Bangladesh. This can help users better understand how medicine work, their uses, price, side effects and potential to interact with other medicines.
